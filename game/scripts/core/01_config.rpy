@@ -44,3 +44,60 @@ init -1 python:
 
     # 5. 原生加粗字体映射
     config.font_replacement_map["fonts/ChillHuoSong_F_Regular.otf", True, False] = ("fonts/ChillHuoSong_F_Bold.otf", False, False)
+
+    # 6. 非线性动作曲线注册 (严格对照 https://easings.net/ 标准数学公式)
+    import math
+
+    @renpy.atl_warper
+    def ease_in_out_cubic(t):
+        return 4.0 * t * t * t if t < 0.5 else 1.0 - math.pow(-2.0 * t + 2.0, 3) / 2.0
+
+    @renpy.atl_warper
+    def ease_out_quart(t):
+        return 1.0 - math.pow(1.0 - t, 4)
+
+    @renpy.atl_warper
+    def ease_in_out_quad(t):
+        return 2.0 * t * t if t < 0.5 else 1.0 - math.pow(-2.0 * t + 2.0, 2) / 2.0
+
+    @renpy.atl_warper
+    def ease_out_cubic(t):
+        return 1.0 - math.pow(1.0 - t, 3)
+
+    @renpy.atl_warper
+    def ease_out_quad(t):
+        return 1.0 - (1.0 - t) * (1.0 - t)
+
+    @renpy.atl_warper
+    def ease_in_quad(t):
+        return t * t
+
+    @renpy.atl_warper
+    def ease_in_cubic(t):
+        return t * t * t
+
+    @renpy.atl_warper
+    def ease_in_out_quart(t):
+        return 8.0 * t * t * t * t if t < 0.5 else 1.0 - math.pow(-2.0 * t + 2.0, 4) / 2.0
+
+    @renpy.atl_warper
+    def ease_in_out_sine(t):
+        return -(math.cos(math.pi * t) - 1.0) / 2.0
+
+    @renpy.atl_warper
+    def ease_out_sine(t):
+        return math.sin((t * math.pi) / 2.0)
+
+    @renpy.atl_warper
+    def ease_in_sine(t):
+        return 1.0 - math.cos((t * math.pi) / 2.0)
+
+    @renpy.atl_warper
+    def ease_out_back(t):
+        c1 = 1.70158
+        c3 = c1 + 1.0
+        return 1.0 + c3 * math.pow(t - 1.0, 3) + c1 * math.pow(t - 1.0, 2)
+
+
+
+

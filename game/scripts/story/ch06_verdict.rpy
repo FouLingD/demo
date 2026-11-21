@@ -1,292 +1,311 @@
-## ch06_verdict.rpy - 事件 13+14：临近的体检日与七天死刑宣告
-## 对应剧本：出院审判、七天约定、清晨五点的逃跑计划、活下去的执念
-## 包含完整原案 61 个文本块、共 164 句对白与旁白，100% 完整保留无任何删节。
+## ch06_verdict.rpy - 第六章：体检日病房与七天宣判
+## 严格对标《规范文件.md》视觉素材规范与 11111.docx 对象修订终盘定稿
+## 背景规范：hospital_bed_02_blue / hospital_bed_01_blue / hospital_bed_02_orange
+## 立绘规范：anon hosp 01~10 规范病房立绘
+## 演出规范：纯旁白（无头像无立绘 / 无头像仅对方立绘）与主视角 Side Image 差分 + 换行 extend / {nw} 组合
 
-
-
-####### 这一章你写吧，我懒得检查了 
 label ch06_verdict:
     $ current_chapter = 6
+    $ quick_menu = True
 
-    # 体检日病房，粉色凭条与七天宣判
-    scene bg hospital_room with fade
-    play bgs bgs_hospital fadein 2.0 loop
-    play music bgm_gloomy fadein 2.0 loop
+    # 1. 四点四十阴天病房：被摇醒与细碎无助的对话（海明威式留白）
+    scene black
+    play bgs bgs_hospital fadein 1.5 loop
+    play sound sfx_clothes_rustle
 
-    play music bgm_routine fadein 2.0 fadeout 2.0 loop
+    # 【纯旁白：全黑无头像无立绘】
+    "有人把手按在我的肩膀上，{w=0.3}隔着被单轻轻晃了晃。"
+    anon "高松同学。{w=0.3}醒醒。"
 
-    "第二天。"
-    "我做完超声波复查回到病房，床头柜上放着一张粉色取报告凭条："
-    "{font=fonts/ChillHuoSong_F_Bold.otf}【高松灯，今日16:30，主治医师诊室】{/font}。"
-    "正当我盯着纸片发慌时，门被一把推开了。"
-    "康复就意味着出院，出院就意味着必须重新走回大街上，回到父母叹气的视线里，回到羽丘空荡荡的储物柜前。"
-    "所有人都觉得康复是一件好事。"
-    "可我并不，我觉得那像是一场审判。"
-    "只要你还能走路，你就得去扮演合格的女儿、合格的学生、合格的同龄人。"
-    "你再也没有借口躺在床上发呆了。"
-    "我想说些傻话，连着几小时唱歌，或者只是几小时在星空底下什么也不做。"
-    "我是多么需要快乐！可惜没有人懂得这样的道理。"
-    "活着就是这样一件事，不管你多想停下来，细胞还是会自顾自地分裂。"
-    "它一点也不在乎你有多不想再当一个人。"
+    "我迷迷糊糊地晃了下脑袋，{w=0.3}把脸在臂弯里埋得更深了。"
+    tomori an2 "……不干。{w=0.3}我哪儿也不去。"
 
-    # 爱音夺过粉色凭条
-    play sound sfx_door_slide
-    play music bgm_anon_theme fadein 1.5 loop
-    show anon hospital smile at center_standee with dissolve
+    anon "别犯傻了，不是护士。{w=0.3}醒醒吧，小灯。"
 
-    anon hospital smile "哈喽！{w=0.4}高松同学，你干嘛又缩在床角盯着那张小粉纸发呆啊？"
+    scene bg hospital_bed_02_blue with dissolve
+    camera:
+        blur 10.0
+        warp ease_out_cubic 1.6 blur 0.0
+    play music work fadein 2.0 loop
 
-    tomori hospital expressionless "下午……要拿最终评估单……"
+    # 【纯旁白：无头像，渐渐看清阴天病房】
+    "我迟钝地眨了眨眼皮。{w=0.2}病房里没有开灯，下午四点过后的阴天光线灰蒙蒙地压在床尾。{w=0.2}{nw}"
+    extend "\n我又拉起被单蒙住半张脸。"
 
-    "爱音大大咧咧地坐在我床边，伸手戳了戳我紧紧皱着的额头。"
-    "她两只眼睛亮晶晶的，兴奋地在半空中比划起各种手势。"
+    show anon hosp 07 normal_2 at center_standee with dissolve
+    tomori an2 "……几点了？"
+    anon "四点四十。"
 
-    anon hospital smile "你想想看，只要后天顺利拿到出院通知，我们能做的事情多得数不清呢！"
+    tomori calm "……天怎么这么暗。"
+    show anon hosp 07 normal_3 at anon_wander
+    anon "外面起云了。{w=0.3}{nw}"
+    show anon hosp 07 normal_2 at center_standee
+    extend "\n刚才你睡得很沉，我叫了你三声。"
 
-    tomori hospital expressionless "……出院以后？"
-    tomori hospital expressionless "听起来……像做梦一样。"
+    tomori sadaway "我喜欢蒙着被单说话。{w=0.2}{nw}"
+    extend calm "在被单底下比较暖和。"
 
-    anon hospital excited "才不是做梦呢！只要出院就全都能实现！"
-    anon hospital smile "所以这张报告单我替你去拿！"
+    # 【无头像，仅展示对方立绘动作】
+    play sound sfx_glass_clink
+    show anon hosp 08 gentle at anon_table
+    "爱音站在我的铁床边，没有坐下。{w=0.2}她把床头柜上那杯凉掉的温水往我手边推了推。"
 
-    "爱音不由分说地从我手心里抽走那张粉色凭条。"
+    anon "你要不要喝口水？"
+    tomori calm "不渴。"
+    show anon hosp 07 normal_2 at anon_table
+    anon "你还是喝一点吧。{w=0.3}{nw}"
+    extend "说不定会使你好过些。"
 
-    voice "audio/voice/vo_anon_06_01.ogg"
-    anon hospital excited "四点半准时等我凯旋归来！"
+    play sound sfx_clothes_rustle
+    show anon hosp 06 pain at standee_tremble
+    "我撑起一点身子，没有碰杯子，{w=0.2}却看见她垂在身侧的右手正紧紧攥着衣角。"
+    tomori concern "你的手怎么这么抖？"
 
-    voice "audio/voice/vo_tomori_06_01.ogg"
-    tomori hospital expressionless "……嗯，我等你。"
+    show anon hosp 06 pain at anon_retreat
+    anon "走廊里开着窗，有点冷。"
+
+    tomori calm "……你去过诊室了？"
+    show anon hosp 07 normal_3 at anon_retreat
+    "爱音看着地板，没有看我的眼睛。"
+
+    show anon hosp 06 pain at standee_nod
+    anon "去了。"
+    tomori calm "门开着吗？"
+    show anon hosp 07 normal_2 at anon_retreat
+    anon "半掩着。{w=0.3}{nw}"
+    extend "\n那个戴眼镜的主治医生在里面打电话，没注意门口。"
+    tomori concern "……他在给谁打电话？"
+    show anon hosp 06 pain at anon_retreat
+    anon "你妈妈。"
+
+    play sound sfx_clothes_rustle
+    "我的手指在被单底下蜷缩了一下。"
+    tomori concern "……那张评估单呢？"
+    show anon hosp 07 normal_2 at center_standee
+    anon "就压在诊室门口的分诊台角上。{w=0.3}{nw}"
+    extend "\n我顺手抽出来，揣进兜里就跑回来了。"
+    tomori calm "那上面……怎么写的？"
+
+    show anon hosp 06 pain at standee_tremble
+    "爱音低着头看着地板，嘴唇动了动，把话头顿住了。"
+    anon "你并非真要——{w=0.1}{nw}"
+    "她突然停住不说。我也看着地板。"
+
+    tomori concern "是我……{w=0.2}明天一早就得跟家里人走吗？"
+    show anon hosp 06 pain at standee_shake_h
+    anon "不是出院的事情。"
+    tomori smile "那是骨头还没有长好？"
+
+    show anon hosp 06 pain at standee_tremble
+    "爱音摇了摇头。她的声音又细又轻，像是一碰就会断掉。"
+    anon "骨头长好了。"
+    tomori ehh "……那是什么？"
+
+    play sound sfx_heartbeat
+    camera at camera_heartbeat
+    show anon hosp 10 tears at standee_step_in
+    anon "我刚才在门缝外听见医生在电话里跟你妈妈讲……{w=0.3}{nw}"
+    extend "\n说你从四楼掉下来的时候，主动脉和心壁受了暗伤。"
+    tomori ah "……暗伤？"
+    show anon hosp 06 pain at standee_tremble
+    anon "嗯。他说现在的平稳，只是靠每天点滴里的药物硬撑出来的。{w=0.3}{nw}"
+    extend "\n使什么招儿也不管用了。"
+    tomori concern "……还能撑多久？"
+    show anon hosp 10 tears at standee_tremble
+    anon "最多只能再维持一百六十八个小时。"
+
+    tomori ah "……"
+
+    play music bgm_back_to_start fadein 1.0 loop
+    play sound sfx_strike
+    show anon hosp 10 tears at standee_shake_h
+    anon "高松灯……{w=0.2}{nw}"
+    extend "你只剩下最后七天了。"
+
+    # 2. 七天死刑宣判，认知崩塌与解离（冷青 X 光负片 0.26s 闪断 → 摄影漏光过载 → 黑屏）
+    play sound sfx_strike
+    $ photosnap_cyan(duration=0.26)
+    hide anon
+    scene bg black
+    show ed_ob_lightleak at ed_ob_flare_flash
+    play bgs bgs_white_noise fadein 1.0 loop
+    nvl clear
+
+    vn_white "最晚七天以后，除非出了意外。{w=0.3}\n那么说，没有任何希望了。毫无希望。"
+    vn_white "是时候做点什么了。不能一边待着什么也不做。或许可以写点什么。"
+    vn_white "沉默，之后。怎么做才能再多活一会儿，再活久一点。{w=0.2}就这样。"
+    vn_white "现在我不再是我了。而是某个我不再认识的人。在我自己身上，突然出现了另一个人，她有我的面目，我的外观，但不是我。恰恰是这绝不能由他人替换的正身消失不见了。"
+    vn_white "沉默，之后。你现在可以敞开心扉了。或许是我。为了让生活更甜美？"
+    vn_white "谁也不知道。应该努力活着。不能投入死神的怀抱。就这样。这就是我要说的全部。"
+    nvl clear
+
+    vn_white "病房里即将吞没我的一切全都一动不动。"
+    vn_white "爱音垂在身侧的手臂停滞在一个没有完成的姿势上。窗台上百合花在地板上的影子也固定不动。风像立正似的停住。"
+    vn_white "我试图喊叫，发出声音，扭动一下手指，却明白自己动弹不得。我听不到这个受遏制的世界的最轻微的声息。我想：我在地狱里。"
+    vn_white "我疯了。时间已经停滞。果真如此的话，那么我的思维也应该停滞。"
+    vn_white "一百六十八个小时……{w=0.3}七天。"
+    vn_white "我想躲开这一切。快来把我放在某个地方。"
+    play ambient_sfx sfx_clock_tick volume 0.6
+    vn_white "病房里只有墙上挂钟的声音。七天。在学校里是一周的时间。黑胶唱片放两百遍，七天就结束了。"
+    vn_white "人们常说时间转瞬即逝，在一生最年轻的岁月、最可赞叹的年华，那时间来去匆匆，有时会突然让你感到震惊。{w=0.3}\n才十六岁，就已经是太迟了。我在十六岁的时候就已经走到了头。"
+    nvl clear
+    window hide
+
+    stop bgs fadeout 1.2
+    play bgs bgs_hospital fadein 1.5 loop
+    scene bg hospital_bed_02_blue with dissolve
+    show anon hosp 10 tears at center_standee, standee_shake_h with dissolve
+    anon "对不起……灯，对不起……我本来不该当面告诉你的。{w=0.2}{nw}"
+    extend "\n可是我做不到看着你被蒙在鼓里……在这张床上等到最后一秒。"
+
+    # 【无头像，仅展示对方立绘】
+    show anon hosp 06 pain at standee_tremble
+    "爱音把脸埋在手心里。我看着她。"
+
+    tomori calm "胸口原本沉重的地方，忽然变得很空。{w=0.2}{nw}"
+    extend bitter "\n既然不再有任何希望，我反而感到解脱。这不过叫人难受罢了，没必要哭，现在谁也还没有死啊。"
+
+    tomori calm "原来……{w=0.2}{nw}"
+    extend bitter "只有七天了。"
+
+    tomori sadaway "十六年里，我一直在向所有人道歉。{w=0.2}{nw}"
+    extend bitter "\n向叹气的父母道歉，向觉得我怪异的老师道歉，向在雨里解散的乐队道歉。{w=0.2}{nw}"
+    extend sad "\n我每天醒来，都在为了自己不能成为一个正常人类而难过。"
+    tomori calm "但如果只剩下一百六十八个小时。{w=0.2}{nw}"
+    extend soft "\n这个世界就再也没有理由要求我去变好了。"
+    tomori calm "再也没有人会逼我回到教室，也没有人会对我露出失望的样子。{w=0.2}{nw}"
+    extend smile "\n我拿到了一张可以提前离场的票。{w=0.2}{nw}"
+    extend calm "\n死这个字，我已经无法把它和我的生命两相分开。它免除了我几乎所有的责任。"
+
+    tomori soft "爱音……{w=0.2}{nw}"
+    extend calm "不用说对不起的。{w=0.2}{nw}"
+    extend smile "\n谢谢你把这个消息带给我。"
+
+    show anon hosp 03 curious_1 at center_standee
+    "爱音把脸抬起来，样子是疑惑的。{w=0.2}{nw}"
+    extend "\n那不是看疯子的样子。那是一个闯了祸的孩子发现自己到头来根本没闯祸的样子。眼睛边缘泛着光。好像是要哭出来了。"
+
+    anon "……为什么要谢我啊。"
+
+    tomori calm "因为……{w=0.2}{nw}"
+    extend sadaway "已经没有力气再去变好了。"
+
+    show anon hosp 07 normal_2 at center_standee
+    anon "……什么？"
+
+    tomori calm "不用再回学校了。{w=0.2}{nw}"
+    extend bitter "\n也不用再试着……去当一个合格的人了。{w=0.2}{nw}"
+    extend calm "\n躺在这里就可以。我们什么也不等了。"
+
+    show anon hosp 10 tears at standee_tremble
+    anon "……高松灯。"
+
+    tomori sadaway "我一直……做不好那些事。{w=0.2}{nw}"
+    extend smile "\n现在终于不用做了。"
+
+    show anon hosp 05 annoyed_2 at standee_jump
+    anon "{cps=*1.6}笨蛋！大笨蛋！谁要你认错谁要你合格了啊！{/cps}" with shake_h
+
+    play sound sfx_clothes_rustle
+    show anon hosp 06 pain at anon_lean_in
+    "爱音胡乱用毛衣袖子抹掉脸上的眼泪。"
+
+    tomori calm "下午，晚些时候。我一点也不想再坚持了。{w=0.2}{nw}"
+    extend bitter "\n我认为谁也不能说出这种恐慌。还不能。{w=0.2}{nw}"
+    extend soft "\n我想叫住你，对你说，把你的嘴凑过来。快来，好走得更快。"
+
+    show anon hosp 10 tears at standee_step_in
+    anon "{cps=*1.5}只有七天了！{/cps}{w=0.1}{nw}"
+
+    tomori calm "……嗯，我知道。"
+
+    tomori calm "快。就这样。{w=0.2}{nw}"
+    extend soft "\n我不会再做任何事来限制或扩展你的生活。"
+
+    show anon hosp 10 tears at standee_shake_h
+    anon "{cps=*1.5}你难道真的要在这里乖乖数着墙缝等死吗？！{/cps}"
+
+    "我望着她被泪水浸湿的眼睛。"
+    tomori soft "自从我们有了这事儿，我以为我的生活开始了。这是我平生第一次。{w=0.2}{nw}"
+    extend bitter "\n我怎么知道的？我从这个，从我有时候想死，想受苦，想为了能爱她、能为她而痛苦，也为了想我将来还没做完的事情。"
+    tomori calm "有一天我们会死的。棺材里将有爱情和尸体。{w=0.2}{nw}"
+    extend soft "\n而棺材外面，要放着我们写下的歌。{w=0.2}{nw}"
+    extend smile "不可能不是这样的。"
+
+    # 3. 出逃决意与两个请求
+    play sound sfx_heartbeat
+    camera:
+        warp ease_in_out_cubic 1.2 zoom 1.04 pos (0.5, 0.48)
+    tomori calm "我不想留在这里。{w=0.2}{nw}"
+    extend soft "\n我想在七天结束之前……做一件事。"
+    tomori calm "……唯一的一件事。{w=0.2}{nw}"
+    extend soft "\n我想把没有写完的那首歌……完整地唱给爱音听。"
+
+    show anon hosp 03 curious_2 at standee_step_in
+    anon "……歌？那本写满歌词的日记本？"
+
+    tomori soft "嗯。"
+
+    show anon hosp 04 shy_1 at standee_nod
+    anon "……只唱给我听吗？"
+
+    tomori smile "只唱给爱音一个人听。"
+
+    scene bg hospital_bed_02_orange with dissolve
+    play music bgm_dialogue_warm fadein 1.5 loop
+    show anon hosp 01 smug at anon_burst_in
+    anon "{cps=*1.6}那么，明天清晨五点，护士交接班的时候，我们就从这里逃跑！{/cps}"
+
+    tomori ah "……逃跑？"
+
+    tomori calm "那扇门通哪儿？通另一条街。逃跑用的。一扇用来逃跑的门。{w=0.2}{nw}"
+    extend bitter "\n不能像你一样，这是让我遗憾的地方。{w=0.2}{nw}"
+    extend soft "\n不过，既然爱音都说没关系了，那在这个世界上，就是真的再也没有任何关系了。"
+    tomori calm "你就照这样活下去，永远不再听他们的话。我在心里对自己说，我答应你，永不。{w=0.2}{nw}"
+    extend soft "\n我们还有那么漫长的几天，我们还有太多太多可以并肩去做的事情。"
+    tomori smile "上天在最后收回了全部的苛责，并把千早爱音送到了我空无一人的病床前。{w=0.2}{nw}"
+    extend soft "\n我在这荒芜的人世间，再也找不到比这更加浩大、更加纯粹的至高幸福了。{w=0.2}{nw}"
+    extend smile "\n谢谢你。真的无尽感谢。无言以表。"
+
+    show anon hosp 02 boast at standee_jump
+    anon "{cps=*1.5}把手环扯掉，把难看的病号服扔了，坐上最早一班电车，去哪里都可以！{/cps}"
+
+    tomori calm "去……{w=0.2}{nw}"
+    extend soft "能看到海的地方。"
+
+    "大海是没有证件、没有登记簿的地方。只有在海边或海上，一个没有归宿的人才感到最自在。"
+
+    tomori calm "以及，爱音，我对你有两个请求。"
+
+    show anon hosp 08 gentle at standee_step_in
+    anon "你说。别说两个，一百个我也答应你。"
+
+    tomori calm "第一，帮我找一点能提神的药，或者苦一点的黑咖啡，怎么都可以……{w=0.2}{nw}"
+    extend sadaway "\n只要能让我一直醒着，只要能让我利用好我生命中最后的每一分钟就行。{w=0.2}{nw}"
+    extend uff "我现在好困，爱音，可我不想再去睡觉了，我还有太多太多的事情要做。"
+
+    show anon hosp 08 gentle at standee_nod
+    anon "我明白。我不会让你睡过去的，我会一直在你耳边说话。{w=0.2}{nw}"
+    show anon hosp 03 curious_1 at standee_step_in
+    extend "\n那……第二个请求呢？"
+
+    tomori calm "就像你刚才说的那样——带我离开这里，我要死在外面。{w=0.2}{nw}"
+    extend soft "我需要再去一次那座人行天桥，再去一次阳光城的水族馆。以前我总是低着头匆匆走过那里，可却从来没有产生过要贴在玻璃上、从近处仔细看看那些水母和鱼群的好奇心。"
+
+    show anon hosp 01 smug at standee_jump
+    anon "{cps=*1.5}好，我们明天一早就去！{/cps}"
+
+    show anon hosp 08 gentle at standee_step_in with flash_warm
+    tomori calm "我还想不穿厚外套、不打伞走在深夜的冷风里，去体验一下特别寒冷的滋味。从前因为害怕感冒、害怕在练习室里发不出声音，我总是把自己裹得严严实实的。{w=0.2}{nw}"
+    tomori smile "爱音，总而言之，我需要仰起脸去淋淋雨，需要向那些曾经对我伸出手的女孩们报以微笑，需要去你邀请我去的所有涉谷咖啡馆，"
 
     hide anon with dissolve
-
-    "关于疼痛，我们经常将它当作唯一的真实。"
-    "或者至少是最真实的。"
-    "它来临之时，先于它的一切，它周围的一切，甚至在它面前的一切，都成为瞬间和错觉。"
-    "走廊广播里说，今天是某个纪念日。反复讲了无数次，听得我索性用被子蒙住耳朵。"
-    "一切被改变。一切被改变。"
-    "那么，变的是什么？"
-    "跌落揭示了什么？"
-    "它为谁而来？"
-    "书上写道："
-    "“让我悲伤的是，悲伤不能教会我任何东西。”"
-    "“我们仅被给予心脏所能承受的分量”"
-    "“摔不死你的让你更坚强”"
-    "“痛楚为我们提供最需要学会的功课”，"
-    "诸如此类的话语让我愤怒。确实，医生难以设置一堂要求人们成为骨折者的修炼课。"
-    "我忙于追问，在这个被撞坏的身体里，什么是可以忍受的日子，我如何与它一同撑下去。"
-    "作为自己的见证者，我可以证明这其中没有道理，没有功课。"
-    "但我能说出这样一句话：看着爱音，与她一同坐着，听她说话，与她一同掉眼泪，碰触她，与她交谈，我看到了某种纯净的核心。"
-    "我无法告诉你它究竟是什么样的，但我能说我曾看见。"
-    "同样，看见它让我产生依恋。"
-    "尽管我无法描述我开始依赖的究竟是什么。"
-    "当我为这个活页本收集那些词句时——收进书包、铁盒、日记、脑海——我想要写出一本巨大的歌词，关于西瓜虫、关于那个我跌落下去的夏季、沉在水底的石头的简明清单。"
-    "然而，我做不到。"
-    "当我现在摆弄这些旧纸页之时，最让我吃惊的是它们的贫乏，一种与我的执念成反比的贫乏。"
-    "我以为我收集的碎石足以堆成一座高山。"
-    "而今看来，我只是捡到乐队早已开场又散场之后散落在地面的几片细碎亮片；"
-    "舞台背景早已被拆空。"
-    "也许本该如此。关于这些句子的简短，我十分抱歉；可是，我还能写出什么？"
-    "纵使你像挤柠檬一样地压我，也不能再多挤出什么了。"
-    "那个受伤的同伴现在能够跑出病房，让我即时知晓外面的变化——这类变化总是很多。"
-    "“我们的人生能够改变，会改变。”"
-    "她大声宣称——确实正在改变，并且以吵闹的方式。然而，在这些话语的背后，我依然清楚自己承受的肉体，为弄丢的一切所感到的空洞，那是一个无底洞。"
-    "“如果不写下这些摔碎的困难，我怕我会美化这不堪忍受的现实。”"
-    "所以，在这里，我用铅笔直白地写下，我继续忍受这份痛。"
-    "我把这些字句写在发黄的纸张上，以便记住所有声响，而不只是某些声响，消散在风里。"
-
-    # 傍晚四点四十五分复查归来
-    stop music fadeout 1.5
-    scene bg hospital_corridor with dissolve
-    play sound sfx_footsteps
-    scene bg hospital_room with dissolve
-    play sound sfx_door_slide
-    play music bgm_dialogue_warm fadein 2.0 loop
-
-    "下午四点四十五分。"
-    "挂钟走过了约定的时间。门被用力推开了。"
-    "千早爱音站在门框前，额前的碎发全被汗水打湿。"
-    "她手里抓着撕开的牛皮纸袋，眼泪正顺着下巴往下掉。"
-    show anon hospital tears at center_standee with dissolve
-
-    tomori hospital expressionless "爱音……报告拿到了吗？"
-
-    anon hospital smile "……"
-
-    "她反手把门锁死，抱着变形的纸袋走到床前。"
-
-    tomori hospital expressionless "是我……还不能出院吗？"
-
-    anon hospital smile "不是出院的事情。"
-
-    tomori hospital smile "那是骨头没有长好？"
-
-    anon hospital smile "医生说，掉下来的时候，主动脉和心壁受到了损伤。现在的平稳只是药物撑出来的。"
-
-    tomori hospital expressionless "……损伤？"
-
-    anon hospital smile "最多只能再维持一百六十八个小时。"
-
-    tomori hospital expressionless "……"
-
-    anon hospital smile "高松灯……你只剩下最后七天了。"
-
-
-    play music bgm_gloomy fadein 2.0 fadeout 1.5 loop
-
-    "是时候做点什么了。"
-    "不能一边待着什么也不做。或许可以写点什么。"
-    "沉默，之后。 怎么做才能再多活一会儿，再活久一点。"
-    "就这样。"
-    "现在我不再是我了。而是某个我不再认识的人。"
-    "沉默，之后。 你现在可以敞开心扉了。"
-    "或许是我。为了让生活更甜美？"
-    "谁也不知道。应该努力活着。"
-    "不能投入死神的怀抱。"
-    "就这样。"
-    "这就是我要说的全部。"
-
-    tomori hospital expressionless "一百六十八个小时……七天。"
-
-    "我想躲开这一切。"
-    "快来把我放在某个地方。"
-    "病房里只有墙上挂钟的声音。"
-    "七天。在学校里是一周的时间。"
-    "黑胶唱片放两百遍，七天就结束了。"
-
-    anon hospital smile "对不起……灯，对不起……我本来不该当面告诉你的。"
-    anon hospital smile "可是我做不到看着你被蒙在鼓里……在这张床上等到最后一秒。"
-
-    "爱音把脸埋在手心里。"
-    "我看着她。"
-    "胸口原本沉重的地方，忽然变得很空。"
-
-    tomori hospital expressionless "原来……只有七天了。"
-
-    "十六年里，我一直在向所有人道歉。"
-    "向叹气的父母道歉，向觉得我怪异的老师道歉，向在雨里解散的乐队道歉。"
-    "我每天醒来，都在为了自己不能成为一个正常人类而难过。"
-    "但如果只剩下一百六十八个小时。"
-    "这个世界就再也没有理由要求我去变好了。"
-    "再也没有人会逼我回到教室，也没有人会对我露出失望的神情。"
-    "我拿到了一张可以提前离场的票。"
-
-    tomori hospital tears "爱音……不用说对不起的。"
-    tomori hospital smile "谢谢你把这个消息带给我。"
-
-    anon hospital smile "……为什么要谢我啊。"
-
-    tomori hospital smile "因为……已经没有力气再去变好了。"
-
-    anon hospital smile "……什么？"
-
-    tomori hospital pensive "不用再回学校了。"
-    tomori hospital pensive "也不用再试着……去当一个合格的人了。"
-    tomori hospital expressionless "躺在这里就可以。"
-
-    anon hospital smile "……高松灯。"
-
-    tomori hospital smile "我一直……做不好那些事。"
-    tomori hospital pensive "现在终于不用做了。"
-
-    anon hospital smile "笨蛋！大笨蛋！谁要你认错谁要你合格了啊！"
-
-    "爱音胡乱用毛衣袖口抹掉脸上的眼泪。"
-    "我想躲开这一切。"
-    "快来把我放在某个地方。"
-    "下午，晚些时候。"
-    "我一点也不想再坚持了。"
-    "我认为谁也不能说出这种恐惧。还不能。"
-    "我想叫住你，对你说，把你的嘴凑过来。"
-    "快来，好走得更快。"
-
-    anon hospital smile "只有七天了！"
-
-    tomori hospital expressionless "……嗯，我知道。"
-
-    "快。 就这样。"
-    "我不会再做任何事来限制或扩展你的生活。"
-
-    anon hospital tears "你难道真的要在这里乖乖数着墙缝等死吗？！"
-
-    tomori hospital expressionless "我不想留在这里。"
-    tomori hospital expressionless "我想在七天结束之前……做一件事。"
-    tomori hospital expressionless "……唯一的一件事。"
-
-    "十六年里，我一直在向所有人道歉。"
-    "向叹气的父母道歉，向觉得我怪异的老师道歉，向在雨里解散的乐队道歉。"
-    "我每天醒来，都在为了自己不能成为一个正常人类而难过。"
-    "但如果只剩下一百六十八个小时。"
-    "这个世界就再也没有理由要求我去变好了。"
-    "再也没有人会逼我回到教室，也没有人会对我露出失望的神情。"
-
-    tomori hospital expressionless "我想把没有写完的那首歌……完整地唱给爱音听。"
-
-    anon hospital smile "……歌？那本写满歌词的日记本？"
-
-    tomori hospital expressionless "嗯。"
-
-    anon hospital smile "……只唱给我听吗？"
-
-    tomori hospital expressionless "只唱给爱音一个人听。"
-
-    anon hospital smile "好！"
-
-    tomori hospital smile "……一言为定。"
-
-    # 清晨五点的出逃之誓
-    play music bgm_soaring fadein 2.0 loop
-
-    anon hospital excited "明天清晨五点，护士交接班的时候，我们就从这里逃跑！"
-
-    tomori hospital confused "……逃跑？"
-
-    "不能像你一样，这是让我遗憾的地方。"
-    "不过，既然爱音都说没关系了，那在这个世界上，就是真的再也没有任何关系了。"
-    "我们还有那么漫长的几天，我们还有太多太多可以并肩去做的事情。"
-    "我们要扯掉刺痛的手腕塑料环，迎着破晓的晨光坐上第一班脱离既定轨道的早班电车。"
-    "我们要逃向狂风呼啸的遥远海岸线，把日记本里写满的歌词一字一句唱给翻滚的浪花。"
-    "我们还要去涉谷挑选最漂亮的粉色吉他拨片。去吃甜得发腻的草莓大芭菲。"
-    "神明在最后收回了对我的全部审判，并把千早爱音送到了我空无一人的病床前。"
-    "在这个行将消逝的残破世界里，爱音会在最后的日子里一分一秒都坚定地陪在我的身边。"
-    "哪怕只是握紧我冰凉的手指，只是和我分享毛衣口袋里的微温。"
-    "我在这荒芜的人世间，再也找不到比这更加浩大、更加纯粹的至高幸福了。"
-    "谢谢你。真的无尽感谢。"
-
-    anon hospital tears "把手环扯掉，把难看的病号服扔了，坐上最早一班电车，去哪里都可以！"
-
-    tomori hospital expressionless "去……能看到海的地方。"
-
-    anon hospital smile "好！"
-
-    tomori hospital smile "{cps=22}……一辈子都不放手。{/cps}"
-
-    play sound sfx_strike
-    anon hospital confident "{size=+4}{b}绝对不放手！{/b}{/size}" with shake_h
-
-    # 尾声：高松灯的两个请求与清晨出逃之约
-    play music bgm_music_box fadein 2.5 loop
-
-    tomori hospital expressionless "以及，爱音，我对你有两个请求。"
-
-    anon hospital gentle "你说。别说两个，一百个我也答应你。"
-
-    tomori hospital expressionless "第一，帮我找一点能提神的药，或者苦一点的黑咖啡，怎么都可以……只要能让我一直醒着，只要能让我利用好我生命中最后的每一分钟就行。"
-    tomori hospital expressionless "我现在好困，可我不想再去睡觉了，我还有太多太多的事情要做。"
-
-    anon hospital gentle "我明白。我不会让你睡过去的，我会一直在你耳边说话。"
-    anon hospital gentle "那……第二个请求呢？"
-
-    tomori hospital expressionless "就像你刚才说的那样——带我离开这里，我要死在外面。"
-    tomori hospital smile "我需要再去一次那座人行天桥，再去一次阳光城的水族馆。以前我总是低着头匆匆走过那里，可却从来没有产生过要贴在玻璃上、从近处仔细看看那些水母和鱼群的好奇心。"
-
-    anon hospital smile "好，我们明天一早就去！"
-
-    tomori hospital expressionless "我还想不穿厚外套、不打伞走在深夜的冷风里，去体验一下特别寒冷的滋味。从前因为害怕感冒、害怕在练习室里发不出声音，我总是把自己裹得严严实实的。"
-    tomori hospital smile "爱音，总而言之，我需要仰起脸去淋淋雨，需要向那些曾经对我伸出手的女孩们报以微笑，需要去你邀请我去的所有涉谷咖啡馆，去挑最漂亮的粉色吉他拨片。"
+    "再过几个小时就天亮了。在天亮前一个小时，天气会很冷，但我们已经在路上了。"
 
     # 章节结束过渡
     stop music fadeout 2.5
     stop bgs fadeout 2.0
+    camera at default
     scene black with slow_dissolve
 
     $ persistent.cleared_chapter_6 = True

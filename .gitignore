@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+**/.DS_Store
+
+# Ren'Py Cache & Saves
+cache/
+saves/
+**/cache/
+**/saves/
+
+# Logs
+log.txt
+traceback.txt
+errors.txt
+**/log.txt
+**/traceback.txt
+**/errors.txt
+
+# Large video files (>100MB GitHub limit)
+*.mp4
+*.mov
+*.mkv
+*.avi

@@ -370,6 +370,8 @@ init python:
         ## 整个菜单退出：对话框趁遮罩/面板退场时淡回来
         ui_say_fade_in(UI_SAY_IN_TIME)
         ui_blip_resume()
+        if renpy.get_screen("quick_menu") is None:
+            renpy.show_screen("quick_menu")
 
         return renpy.run(Return())
 

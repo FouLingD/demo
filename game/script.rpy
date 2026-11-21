@@ -1,5 +1,6 @@
 ## script.rpy - 游戏主流程入口与章节路由
 ## 严格对标 01_renpy_basic_style_guide.md 规范：jump 进行跨章节解耦路由
+
 # 1. 定义全屏文字显示界面
 screen say_fullscreen(who, what):
     frame:
@@ -35,30 +36,39 @@ label start:
         $ quick_menu = False
         menu:
             "【开始新故事】":
+                $ quick_menu = True
                 jump ch01_awakening
             "【章节选择】":
                 jump chapter_select_menu
     else:
+        $ quick_menu = True
         jump ch01_awakening
 
 label chapter_select_menu:
-    $ quick_menu = True
+    $ quick_menu = False
     scene bg hospital with fade
     menu:
         "选择要前往的章节："
         "第 1 幕：天台的雨水与被抢救的苏醒":
+            $ quick_menu = True
             jump ch01_awakening
         "第 2 幕：单人病房的墙壁与绝食沉默" if persistent.cleared_chapter_1:
+            $ quick_menu = True
             jump ch02_silence
         "第 3 幕：走廊的哭声与逃兵的驻足" if persistent.cleared_chapter_2:
+            $ quick_menu = True
             jump ch03_encounter
         "第 4 幕：越界的闯入与窗外的阴天" if persistent.cleared_chapter_3:
+            $ quick_menu = True
             jump ch04_intrusion
         "第 5 幕：活动室里的残缺笔记本" if persistent.cleared_chapter_4:
+            $ quick_menu = True
             jump ch05_notebook
         "第 6 幕：临近的体检日与七天死刑宣告" if persistent.cleared_chapter_5:
+            $ quick_menu = True
             jump ch06_verdict
         "返回":
+            $ quick_menu = True
             jump start
 
 label game_credits:

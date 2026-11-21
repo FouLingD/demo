@@ -7,7 +7,7 @@
     "description": "天台门锁细发卡撬锁声",
     "epidemic_title": "Doors, Misc, Lock Picking 01",
     "epidemic_id": "4de74852-90e9-4e01-81da-a95d90bb98e0",
-    "size_bytes": 38589
+    "size_bytes": 28336
   },
   {
     "filename": "sfx_metal_door_open.ogg",
@@ -17,7 +17,7 @@
     "description": "天台重型铁门合页吱呀开启声",
     "epidemic_title": "Doors, Metal, Open, Slow, Squeak, Rumble, Creak",
     "epidemic_id": "ee682f1f-4b60-421c-a675-74ca239b3871",
-    "size_bytes": 94755
+    "size_bytes": 37589
   },
   {
     "filename": "sfx_running_corridor.ogg",
@@ -27,7 +27,7 @@
     "description": "清晨5点医院走廊狂奔脚步声",
     "epidemic_title": "Footsteps, Human, Running, Tiled Floor, Reverberant Corridor",
     "epidemic_id": "fe34e9e1-65d6-4a49-b8f4-ac1a0f828c0e",
-    "size_bytes": 269708
+    "size_bytes": 42028
   },
   {
     "filename": "sfx_auto_door.ogg",
@@ -37,7 +37,7 @@
     "description": "池袋大商场玻璃感应自动门滑开",
     "epidemic_title": "Doors, Electric, Automatic, Glass, Slide, Close",
     "epidemic_id": "0a25e87c-8118-4281-8da5-e6b14628e22c",
-    "size_bytes": 166780
+    "size_bytes": 32716
   },
   {
     "filename": "sfx_candy_jar.ogg",
@@ -57,7 +57,7 @@
     "description": "咬碎硬星糖清脆咀嚼声",
     "epidemic_title": "Food & Drink, Eating, Eat, Bite, Crunch, Peanuts, Single",
     "epidemic_id": "fead9465-2c21-4c6e-94c0-b667b1a6383f",
-    "size_bytes": 12883
+    "size_bytes": 11053
   },
   {
     "filename": "sfx_coin_insert.ogg",
@@ -67,7 +67,7 @@
     "description": "投币入街机投币槽声",
     "epidemic_title": "Objects, Coin, Coin Into Slot Machine 02",
     "epidemic_id": "e67aba81-3323-4f38-84de-d41ef8b3928b",
-    "size_bytes": 86419
+    "size_bytes": 15572
   },
   {
     "filename": "sfx_plush_drop.ogg",
@@ -77,7 +77,7 @@
     "description": "娃娃机企鹅掉入出物口扑通声",
     "epidemic_title": "Toys, Misc, Padded Object, Soft Play, Throw To Floor",
     "epidemic_id": "0c26c9bb-0fe7-4c37-9577-89134df33b00",
-    "size_bytes": 12886
+    "size_bytes": 7548
   },
   {
     "filename": "sfx_key_unlock.ogg",
@@ -87,7 +87,7 @@
     "description": "爱音公寓玄关钥匙开锁进门声",
     "epidemic_title": "Doors, Hardware, Door Lock, Latch, Movement, Unlock, Variations",
     "epidemic_id": "3758921b-22ab-4223-93db-f18566caa621",
-    "size_bytes": 78829
+    "size_bytes": 11912
   },
   {
     "filename": "sfx_clothes_rustle.ogg",
@@ -97,7 +97,7 @@
     "description": "穿脱风衣与被窝布料摩擦声",
     "epidemic_title": "Cloth, Movement, Jacket, Various 01",
     "epidemic_id": "aec83c28-627b-4d29-9753-34a77429b29a",
-    "size_bytes": 384409
+    "size_bytes": 16478
   },
   {
     "filename": "sfx_table_slam.ogg",
@@ -117,7 +117,7 @@
     "description": "雨滴倒流向天空超现实魔幻升腾",
     "epidemic_title": "Magic, Spell, Wand, Reversed Whoosh, Build 01",
     "epidemic_id": "41ec1a39-eb7e-4574-be40-b10630961614",
-    "size_bytes": 55967
+    "size_bytes": 25886
   },
   {
     "filename": "sfx_whiteout_swell.ogg",
@@ -133,11 +133,11 @@
     "filename": "sfx_heartbeat_real.ogg",
     "path": "game/audio/sfx/sfx_heartbeat_real.ogg",
     "category": "SFX",
-    "chapter": "Ch01/Ch03",
-    "description": "真实人体心跳搏动",
-    "epidemic_title": "Human, Heartbeat, Designed, Heartbeats, Loopable 03",
-    "epidemic_id": "adab3d6d-43c5-4832-a27e-b114ef6ae8bd",
-    "size_bytes": 33205
+    "chapter": "Global",
+    "description": "贴近胸腔的沉重清晰心跳声",
+    "epidemic_title": "Human, Heartbeat, Cinematic, 65 BPM",
+    "epidemic_id": "c8e198d7-e5d4-4fe9-b333-65c9479ac11c",
+    "size_bytes": 45850
   },
   {
     "filename": "sfx_door_slide_real.ogg",
@@ -147,7 +147,7 @@
     "description": "真实病房推拉移门滑行声",
     "epidemic_title": "Doors, Sliding, Porch Door, Close, Slide",
     "epidemic_id": "f5342a2d-7609-4363-b233-6ffcbde0ced6",
-    "size_bytes": 58948
+    "size_bytes": 31614
   },
   {
     "filename": "bgs_white_noise.ogg",
@@ -197,7 +197,7 @@
     "description": "三楼街机游戏机厅环境音",
     "epidemic_title": "Ambience, Public Place, Arcade, Game Hall",
     "epidemic_id": "ba932f11-32d9-4b80-a0ee-55275e1da919",
-    "size_bytes": 1103428
+    "size_bytes": 956049
   },
   {
     "filename": "bgs_restaurant.ogg",
@@ -237,7 +237,7 @@
     "description": "铁路天桥下方铁轨列车疾驰轰鸣",
     "epidemic_title": "Trains, Electric, Exterior, Bridge, Underneath Railway, Train Pass By 02",
     "epidemic_id": "0e176e0d-f840-47f9-9a0c-09903b21e470",
-    "size_bytes": 508816
+    "size_bytes": 262742
   },
   {
     "filename": "bgs_beach_night.ogg",
@@ -277,6 +277,706 @@
     "description": "药瓶摇晃与药丸散落声",
     "epidemic_title": "Objects, Medical, Drop Pills Into Bottle",
     "epidemic_id": "578a0142-242e-450a-954f-9868be6c1345",
-    "size_bytes": 76783
+    "size_bytes": 16064
+  },
+  {
+    "filename": "bgs_hospital_ambience.ogg",
+    "path": "game/audio/bgs/bgs_hospital_ambience.ogg",
+    "category": "BGS",
+    "chapter": "Ch01-Ch08",
+    "description": "安静私立医院病房与走廊环境白噪与远处声响",
+    "epidemic_title": "Ambience, Hospital, Private Hospital, Entrance Hall, Very Calm",
+    "epidemic_id": "dbf148de-bc26-41df-8a1c-79991cfc081d",
+    "size_bytes": 798731
+  },
+  {
+    "filename": "bgs_rain_heavy.ogg",
+    "path": "game/audio/bgs/bgs_rain_heavy.ogg",
+    "category": "BGS",
+    "chapter": "Ch01",
+    "description": "病房窗外阴沉大雨室内窗玻璃隔音雨声",
+    "epidemic_title": "Rain, Interior, Glass, Rain Moderate To Heavy Small Window Interior Loop",
+    "epidemic_id": "7f25aa92-0206-44d7-a8cb-77be7ccb6e45",
+    "size_bytes": 866559
+  },
+  {
+    "filename": "sfx_rain.ogg",
+    "path": "game/audio/sfx/sfx_rain.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "雨点叩击窗玻璃短音效",
+    "epidemic_title": "Rain, Interior, Glass, Interior, Rain Against Window",
+    "epidemic_id": "bc90189f-44fe-4068-bf17-153cc2eea2a2",
+    "size_bytes": 117485
+  },
+  {
+    "filename": "sfx_footsteps.ogg",
+    "path": "game/audio/sfx/sfx_footsteps.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "医院及学校走廊瓷砖地面运动鞋脚步声",
+    "epidemic_title": "Footsteps, Human, Sneakers, Tile, Walk, Distant",
+    "epidemic_id": "5b4f4eb9-fcd7-4183-8004-54f7dd6d8963",
+    "size_bytes": 22279
+  },
+  {
+    "filename": "sfx_door_close.ogg",
+    "path": "game/audio/sfx/sfx_door_close.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "室内木门厚重闭合落锁声",
+    "epidemic_title": "Doors, Wood, Front, Shut, Internal",
+    "epidemic_id": "f82674d4-2dcb-4944-a253-7d45d20cf16d",
+    "size_bytes": 10375
+  },
+  {
+    "filename": "sfx_impact.ogg",
+    "path": "game/audio/sfx/sfx_impact.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "低沉电影级震撼重击低频冲击声",
+    "epidemic_title": "Designed, Boom, Cinematic, Deep, Boom, Impact",
+    "epidemic_id": "2f0a40ab-f23a-4927-a911-1d70459d52e7",
+    "size_bytes": 23494
+  },
+  {
+    "filename": "sfx_strike.ogg",
+    "path": "game/audio/sfx/sfx_strike.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "锐利剧情转折重音敲击声",
+    "epidemic_title": "Designed, Stinger, Cinematic Hit, Impact, Thud, Low Pitch, Reverb",
+    "epidemic_id": "e4fa7af5-f327-4c21-86b7-091e595a8a6f",
+    "size_bytes": 23736
+  },
+  {
+    "filename": "sfx_glass_clink.ogg",
+    "path": "game/audio/sfx/sfx_glass_clink.ogg",
+    "category": "SFX",
+    "chapter": "Ch09/Global",
+    "description": "玻璃水杯轻放桌面清脆碰响",
+    "epidemic_title": "Food & Drink, Glassware, Cups, Mugs, Set Down On Table 01",
+    "epidemic_id": "499635af-7286-4cab-b0fc-f27a070f3983",
+    "size_bytes": 8395
+  },
+  {
+    "filename": "sfx_iv_drip.ogg",
+    "path": "game/audio/sfx/sfx_iv_drip.ogg",
+    "category": "SFX",
+    "chapter": "Ch01",
+    "description": "安静病房内点滴药液单滴落声",
+    "epidemic_title": "Water, Drip, Drop, Single",
+    "epidemic_id": "da7885a5-2746-4edd-855a-790cebf94cd7",
+    "size_bytes": 5618
+  },
+  {
+    "filename": "sfx_page_turn.ogg",
+    "path": "game/audio/sfx/sfx_page_turn.ogg",
+    "category": "SFX",
+    "chapter": "Ch05/Ch09/Ch11",
+    "description": "翻动歌词笔记本纸页沙沙声",
+    "epidemic_title": "Objects, Book, Book, Notebook, Page, Flip",
+    "epidemic_id": "6cf509c1-65d5-4a7e-8d8a-12020fe19088",
+    "size_bytes": 5170
+  },
+  {
+    "filename": "sfx_bell.ogg",
+    "path": "game/audio/sfx/sfx_bell.ogg",
+    "category": "SFX",
+    "chapter": "Ch02/Global",
+    "description": "医院三点探视清澈提示铃声",
+    "epidemic_title": "Bells, Misc, Bus Stop Bell, Chime, Alarm 02",
+    "epidemic_id": "ff3fe343-f85e-4f75-bfb1-9d2dc185d354",
+    "size_bytes": 36025
+  },
+  {
+    "filename": "sfx_sparkle.ogg",
+    "path": "game/audio/sfx/sfx_sparkle.ogg",
+    "category": "SFX",
+    "chapter": "Ch04",
+    "description": "喜剧夸张闪亮罐头音效",
+    "epidemic_title": "Magic, Shimmer, Shing, Ringing Chime",
+    "epidemic_id": "bf81899c-45a9-4b6f-a006-11c32d2040fd",
+    "size_bytes": 33298
+  },
+  {
+    "filename": "sfx_wind_chime.ogg",
+    "path": "game/audio/sfx/sfx_wind_chime.ogg",
+    "category": "SFX",
+    "chapter": "Ch02",
+    "description": "走廊窗边彩色玻璃风铃随风清响",
+    "epidemic_title": "Musical, Chime, Koshi Aria Chime, Ringing Bell Wind Chime",
+    "epidemic_id": "6a5c41f3-172c-4ab6-ae91-67d836bd153c",
+    "size_bytes": 68817
+  },
+  {
+    "filename": "sfx_monitor_beep.ogg",
+    "path": "game/audio/sfx/sfx_monitor_beep.ogg",
+    "category": "SFX",
+    "chapter": "Ch01/Ch06",
+    "description": "病房远处规律心电监护仪轻响",
+    "epidemic_title": "Beeps, Medical, Heart Monitor, Steady, Distant",
+    "epidemic_id": "48a22e83-3d10-4a9e-a744-7db792d45dcf",
+    "size_bytes": 31163
+  },
+  {
+    "filename": "sfx_trolley_wheels.ogg",
+    "path": "game/audio/sfx/sfx_trolley_wheels.ogg",
+    "category": "SFX",
+    "chapter": "Ch01/Ch02",
+    "description": "医院走廊医疗手推车滚轮经过声",
+    "epidemic_title": "Ambience, Hospital, Stretcher Trolley, Hallway",
+    "epidemic_id": "b481ea1e-c1a8-4cdb-995a-6dd82535b02f",
+    "size_bytes": 55585
+  },
+  {
+    "filename": "sfx_marbles.ogg",
+    "path": "game/audio/sfx/sfx_marbles.ogg",
+    "category": "SFX",
+    "chapter": "Ch02",
+    "description": "玻璃弹珠散落碰撞声",
+    "epidemic_title": "Toys, Misc, Marbles, Glass, Movement In Hand",
+    "epidemic_id": "f106d85d-5f60-4f56-9ea9-0f6ee3fb59a1",
+    "size_bytes": 36012
+  },
+  {
+    "filename": "sfx_pencil_write.ogg",
+    "path": "game/audio/sfx/sfx_pencil_write.ogg",
+    "category": "SFX",
+    "chapter": "Ch05/Ch11",
+    "description": "铅笔在本子上沙沙书写声",
+    "epidemic_title": "Objects, Writing, Pencil Writing",
+    "epidemic_id": "4225f292-8f72-4386-92eb-85ccd5de1782",
+    "size_bytes": 33964
+  },
+  {
+    "filename": "sfx_pudding_peel.ogg",
+    "path": "game/audio/sfx/sfx_pudding_peel.ogg",
+    "category": "SFX",
+    "chapter": "Ch03",
+    "description": "撕开草莓布丁塑料封膜声",
+    "epidemic_title": "Food & Drink, Misc, Yoghurt Pot, Lid, Peel Open",
+    "epidemic_id": "56e6fdd3-3451-46b9-a5e3-8dcb7a39f336",
+    "size_bytes": 12633
+  },
+  {
+    "filename": "sfx_earphone_plug.ogg",
+    "path": "game/audio/sfx/sfx_earphone_plug.ogg",
+    "category": "SFX",
+    "chapter": "Ch05",
+    "description": "耳机插头插入与轻响",
+    "epidemic_title": "Communications, Phonograph, DJ Mixer, Headphone, Plug, In, Out",
+    "epidemic_id": "bb91dee3-1fb3-4dcc-874f-4247a9c80dc6",
+    "size_bytes": 10083
+  },
+  {
+    "filename": "sfx_fence_rattle.ogg",
+    "path": "game/audio/sfx/sfx_fence_rattle.ogg",
+    "category": "SFX",
+    "chapter": "Ch05",
+    "description": "天台金属铁丝网晃动轻撞声",
+    "epidemic_title": "Chains, Movement, Around Metal Fence, Rattle",
+    "epidemic_id": "bbc4db46-39f4-499f-9e42-dc304ff4a0ca",
+    "size_bytes": 31321
+  },
+  {
+    "filename": "sfx_paper_crinkle.ogg",
+    "path": "game/audio/sfx/sfx_paper_crinkle.ogg",
+    "category": "SFX",
+    "chapter": "Ch05/Ch06",
+    "description": "揉捏粉色取报告纸条沙沙声",
+    "epidemic_title": "Paper, Handle, Notepad, Ripped Out Pages, Several, Crumple In Hand",
+    "epidemic_id": "0c7438a9-f17b-4c92-9a20-533086f92946",
+    "size_bytes": 22721
+  },
+  {
+    "filename": "sfx_zipper.ogg",
+    "path": "game/audio/sfx/sfx_zipper.ogg",
+    "category": "SFX",
+    "chapter": "Ch07",
+    "description": "防风夹克/包袋拉链拉合声",
+    "epidemic_title": "Objects, Zipper, Bag, Bum Bag, Close Zipper",
+    "epidemic_id": "6619dd84-ce46-4aeb-8911-c45ce518eeee",
+    "size_bytes": 19332
+  },
+  {
+    "filename": "sfx_book_drop.ogg",
+    "path": "game/audio/sfx/sfx_book_drop.ogg",
+    "category": "SFX",
+    "chapter": "Ch07",
+    "description": "黑色笔记本滑落地面闷响",
+    "epidemic_title": "Objects, Book, Books, Fall On Floor 01",
+    "epidemic_id": "f9d72832-cd25-4abb-8b72-5b0cd79ffc02",
+    "size_bytes": 8178
+  },
+  {
+    "filename": "sfx_arcade_button.ogg",
+    "path": "game/audio/sfx/sfx_arcade_button.ogg",
+    "category": "SFX",
+    "chapter": "Ch08",
+    "description": "街机机台按键按压咔哒声",
+    "epidemic_title": "Games, Arcade, Pinball, Button, Left Flipper",
+    "epidemic_id": "d5e933fb-0b89-4f69-ae14-42039831af0e",
+    "size_bytes": 8711
+  },
+  {
+    "filename": "sfx_claw_whir.ogg",
+    "path": "game/audio/sfx/sfx_claw_whir.ogg",
+    "category": "SFX",
+    "chapter": "Ch08",
+    "description": "娃娃机机械爪马达运转降落声",
+    "epidemic_title": "Motors, Servo, Electrical Servo, Spin 21",
+    "epidemic_id": "a0875f42-4152-42b0-8309-1e4268edadfa",
+    "size_bytes": 31386
+  },
+  {
+    "filename": "sfx_cutlery_clink.ogg",
+    "path": "game/audio/sfx/sfx_cutlery_clink.ogg",
+    "category": "SFX",
+    "chapter": "Ch03/Ch08",
+    "description": "勺子与瓷碗轻碰清脆声",
+    "epidemic_title": "Food & Drink, Tableware, Spoon, Put Down In Bowl Of Cereal",
+    "epidemic_id": "6194167e-7af7-4332-bbe0-5f6d273d7296",
+    "size_bytes": 9490
+  },
+  {
+    "filename": "sfx_door_open_wood.ogg",
+    "path": "game/audio/sfx/sfx_door_open_wood.ogg",
+    "category": "SFX",
+    "chapter": "Ch09/Ch11",
+    "description": "室内木门把手转动推开声",
+    "epidemic_title": "Doors, Wood, Hotel Room, Door, Handle, Open",
+    "epidemic_id": "c0ac50c7-407b-475e-b407-7eef627a1c7d",
+    "size_bytes": 17351
+  },
+  {
+    "filename": "sfx_light_switch.ogg",
+    "path": "game/audio/sfx/sfx_light_switch.ogg",
+    "category": "SFX",
+    "chapter": "Ch09",
+    "description": "墙壁电灯开关啪嗒按下声",
+    "epidemic_title": "Mechanical, Switch, Light Switch, On, Off",
+    "epidemic_id": "2b2e2214-2f82-4614-a840-75eb7bff59b7",
+    "size_bytes": 4339
+  },
+  {
+    "filename": "sfx_shower.ogg",
+    "path": "game/audio/sfx/sfx_shower.ogg",
+    "category": "SFX",
+    "chapter": "Ch09",
+    "description": "隔着浴室门的淋浴流水声",
+    "epidemic_title": "Water, Plumbing, Bathroom, Shower Running, Door Closed",
+    "epidemic_id": "95fb7474-74b8-494a-8a79-06359e314513",
+    "size_bytes": 57966
+  },
+  {
+    "filename": "sfx_clock_tick.ogg",
+    "path": "game/audio/sfx/sfx_clock_tick.ogg",
+    "category": "SFX",
+    "chapter": "Ch06/Ch10",
+    "description": "安静房间挂钟指针走动滴答声",
+    "epidemic_title": "Clocks, Tick, Wooden Wall Clock, Ticking",
+    "epidemic_id": "4270427d-958a-4ed1-a9b5-b2d2eacfafd0",
+    "size_bytes": 51742
+  },
+  {
+    "filename": "sfx_train_horn.ogg",
+    "path": "game/audio/sfx/sfx_train_horn.ogg",
+    "category": "SFX",
+    "chapter": "Ch11",
+    "description": "电车驶过铁桥遥远鸣笛风声",
+    "epidemic_title": "Trains, Horn, Passenger Train, Pass By, Fast, Doppler, Horn",
+    "epidemic_id": "2ad604b2-efc4-4dc2-9808-25c70f9c36a7",
+    "size_bytes": 56197
+  },
+  {
+    "filename": "sfx_thunder.ogg",
+    "path": "game/audio/sfx/sfx_thunder.ogg",
+    "category": "SFX",
+    "chapter": "Ch11",
+    "description": "暴雨夜窗外沉闷远雷声",
+    "epidemic_title": "Weather, Thunder, Tropical, Distant Thunder, Booming Thunder 02",
+    "epidemic_id": "33e50728-627a-44b6-adeb-15ad574bb97e",
+    "size_bytes": 96339
+  },
+  {
+    "filename": "sfx_pebble_scatter.ogg",
+    "path": "game/audio/sfx/sfx_pebble_scatter.ogg",
+    "category": "SFX",
+    "chapter": "Ch11",
+    "description": "一把碎石子抛洒滚动散落声",
+    "epidemic_title": "Rocks, Handle, Movement, Pebbles, Many 01",
+    "epidemic_id": "8e994db9-b550-48aa-a645-d223304920bd",
+    "size_bytes": 38346
+  },
+  {
+    "filename": "sfx_footsteps_wood.ogg",
+    "path": "game/audio/sfx/sfx_footsteps_wood.ogg",
+    "category": "SFX",
+    "chapter": "Ch09",
+    "description": "二楼卧室木地板轻缓脚步声",
+    "epidemic_title": "Footsteps, Human, Wood, Walk",
+    "epidemic_id": "ca034abd-9560-442a-ab5f-3795c81ac751",
+    "size_bytes": 18282
+  },
+  {
+    "filename": "sfx_footsteps_gravel.ogg",
+    "path": "game/audio/sfx/sfx_footsteps_gravel.ogg",
+    "category": "SFX",
+    "chapter": "Ch11",
+    "description": "夜间砂石路面赶路脚步声",
+    "epidemic_title": "Footsteps, Human, Gravel, Walk",
+    "epidemic_id": "7f20485b-9ac8-45bd-b335-9a41d6cb77d8",
+    "size_bytes": 25424
+  },
+  {
+    "filename": "sfx_can_open.ogg",
+    "path": "game/audio/sfx/sfx_can_open.ogg",
+    "category": "SFX",
+    "chapter": "Ch08",
+    "description": "易拉罐拉环开启嘶响声",
+    "epidemic_title": "Drink Can, Soda, Open 02",
+    "epidemic_id": "1ed2b07c-d76b-4b86-b3cf-f2e823f9cd97",
+    "size_bytes": 10113
+  },
+  {
+    "filename": "sfx_cough_soft.ogg",
+    "path": "game/audio/sfx/sfx_cough_soft.ogg",
+    "category": "SFX",
+    "chapter": "Ch01",
+    "description": "少女虚弱压抑的轻咳声",
+    "epidemic_title": "Human, Cough, Female, Single",
+    "epidemic_id": "79429fed-fdc1-4e44-aeeb-7d0e70556ae4",
+    "size_bytes": 12665
+  },
+  {
+    "filename": "sfx_chair_scrape.ogg",
+    "path": "game/audio/sfx/sfx_chair_scrape.ogg",
+    "category": "SFX",
+    "chapter": "Ch02/Ch08",
+    "description": "椅子挪动摩擦地面轻响",
+    "epidemic_title": "Chair, Small, Wooden, Drag, Scrape, Squeak",
+    "epidemic_id": "45af5496-449c-4b3e-bc7f-faf53544d919",
+    "size_bytes": 18136
+  },
+  {
+    "filename": "sfx_bus_door.ogg",
+    "path": "game/audio/sfx/sfx_bus_door.ogg",
+    "category": "SFX",
+    "chapter": "Ch07",
+    "description": "长途巴士气压刹车及车门开合声",
+    "epidemic_title": "Vehicles, Bus, Air Brake, Door Close, City Bus",
+    "epidemic_id": "17f665fd-892e-4071-8e73-fdee48890be5",
+    "size_bytes": 36869
+  },
+  {
+    "filename": "sfx_bag_drop.ogg",
+    "path": "game/audio/sfx/sfx_bag_drop.ogg",
+    "category": "SFX",
+    "chapter": "Ch09",
+    "description": "书包/行李放落地面的闷响",
+    "epidemic_title": "Objects, Bag, Backpack Drop On Floor",
+    "epidemic_id": "01f1f190-b92d-41e9-bed6-cc326c3386fa",
+    "size_bytes": 14345
+  },
+  {
+    "filename": "sfx_piano_sting.ogg",
+    "path": "game/audio/sfx/sfx_piano_sting.ogg",
+    "category": "SFX",
+    "chapter": "Ch02/Ch06",
+    "description": "大钢琴单音余韵情感定格声",
+    "epidemic_title": "Musical, Keyed, Grand Piano, Notes 03",
+    "epidemic_id": "f7d69e5b-e707-4aae-8448-f9754d97df3d",
+    "size_bytes": 54823
+  },
+  {
+    "filename": "sfx_music_box_wind.ogg",
+    "path": "game/audio/sfx/sfx_music_box_wind.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "八音盒发条上弦齿轮转动声",
+    "epidemic_title": "Toys, Mechanical, Wind Up Music Box",
+    "epidemic_id": "a7eba5d8-f447-471f-9c23-3a31b91593fc",
+    "size_bytes": 44857
+  },
+  {
+    "filename": "bgs_city_night.ogg",
+    "path": "game/audio/bgs/bgs_city_night.ogg",
+    "category": "BGS",
+    "chapter": "Ch08/Ch09",
+    "description": "深夜东京街头寂静夜风与远处车流底噪",
+    "epidemic_title": "Ambience, Urban, City, Quiet, Night, Air Tone",
+    "epidemic_id": "14531077-0302-45ae-9b77-7102e5b2fb83",
+    "size_bytes": 729334
+  },
+  {
+    "filename": "bgs_rain_umbrella.ogg",
+    "path": "game/audio/bgs/bgs_rain_umbrella.ogg",
+    "category": "BGS",
+    "chapter": "Ch11",
+    "description": "雨水密集击打透明雨伞伞面声",
+    "epidemic_title": "Rain, Cloth, Raining Umbrella 02",
+    "epidemic_id": "1ad3939a-cc4b-4617-b5ef-69fd9eb74da5",
+    "size_bytes": 981070
+  },
+  {
+    "filename": "sfx_phone_vibrate.ogg",
+    "path": "game/audio/sfx/sfx_phone_vibrate.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "桌面手机震动提示音",
+    "source": "Wyzowl SFX Kit (CC0)",
+    "size_bytes": 12020
+  },
+  {
+    "filename": "sfx_phone_keypad.ogg",
+    "path": "game/audio/sfx/sfx_phone_keypad.ogg",
+    "category": "SFX",
+    "chapter": "Ch05/Ch09",
+    "description": "手机按键点按输入声",
+    "source": "Wyzowl SFX Kit (CC0)",
+    "size_bytes": 23187
+  },
+  {
+    "filename": "sfx_latch_click.ogg",
+    "path": "game/audio/sfx/sfx_latch_click.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "金属小搭扣轻脆弹开声",
+    "source": "Wyzowl SFX Kit (CC0)",
+    "size_bytes": 2644
+  },
+  {
+    "filename": "sfx_whoosh_soft.ogg",
+    "path": "game/audio/sfx/sfx_whoosh_soft.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "画面转场或记忆闪回轻柔气浪声",
+    "source": "Wyzowl SFX Kit (CC0)",
+    "size_bytes": 6272
+  },
+  {
+    "filename": "sfx_wood_tap.ogg",
+    "path": "game/audio/sfx/sfx_wood_tap.ogg",
+    "category": "SFX",
+    "chapter": "Global",
+    "description": "指节轻敲木桌桌面声",
+    "source": "Wyzowl SFX Kit (CC0)",
+    "size_bytes": 2656
+  },
+  {
+    "filename": "blip_anon.ogg",
+    "path": "game/audio/sfx/blip_anon.ogg",
+    "category": "UI/Blip",
+    "chapter": "Global",
+    "description": "角色对话有机原声拨片音效（取代早期合成正弦音）",
+    "source": "CC0 Kenney/Wyzowl (pluck_001.wav)",
+    "size_bytes": 1394
+  },
+  {
+    "filename": "blip_tomori.ogg",
+    "path": "game/audio/sfx/blip_tomori.ogg",
+    "category": "UI/Blip",
+    "chapter": "Global",
+    "description": "角色对话有机原声拨片音效（取代早期合成正弦音）",
+    "source": "CC0 Kenney/Wyzowl (pluck_001.wav)",
+    "size_bytes": 1543
+  },
+  {
+    "filename": "blip_sakiko.ogg",
+    "path": "game/audio/sfx/blip_sakiko.ogg",
+    "category": "UI/Blip",
+    "chapter": "Global",
+    "description": "角色对话有机原声拨片音效（取代早期合成正弦音）",
+    "source": "CC0 Kenney/Wyzowl (pluck_002.wav)",
+    "size_bytes": 1611
+  },
+  {
+    "filename": "blip_soyo.ogg",
+    "path": "game/audio/sfx/blip_soyo.ogg",
+    "category": "UI/Blip",
+    "chapter": "Global",
+    "description": "角色对话有机原声拨片音效（取代早期合成正弦音）",
+    "source": "CC0 Kenney/Wyzowl (foley-wood-touch.wav)",
+    "size_bytes": 1326
+  },
+  {
+    "filename": "blip_default.ogg",
+    "path": "game/audio/sfx/blip_default.ogg",
+    "category": "UI/Blip",
+    "chapter": "Global",
+    "description": "角色对话有机原声拨片音效（取代早期合成正弦音）",
+    "source": "CC0 Kenney/Wyzowl (select_002.wav)",
+    "size_bytes": 1371
+  },
+  {
+    "filename": "bgm_es_hospital_piano.ogg",
+    "path": "game/audio/bgm/bgm_es_hospital_piano.ogg",
+    "category": "BGM",
+    "chapter": "Ch01/Ch06",
+    "description": "克制沉郁的独奏钢琴（医院长夜与病房对谈）",
+    "epidemic_title": "& Wishes — Martin Gauffin",
+    "epidemic_id": "40bd0f6a-d8cf-3417-9cb0-082717856456",
+    "size_bytes": 3677945
+  },
+  {
+    "filename": "bgm_es_night_ambient.ogg",
+    "path": "game/audio/bgm/bgm_es_night_ambient.ogg",
+    "category": "BGM",
+    "chapter": "Ch05/Ch09",
+    "description": "宁静空灵的夜空氛围铺底（天台与水族馆夜晚）",
+    "epidemic_title": "Wanted 19 — Anders Ekengren",
+    "epidemic_id": "e70b9318-70ef-38a2-b68a-3514218ee661",
+    "size_bytes": 2531979
+  },
+  {
+    "filename": "bgm_es_emotional_strings.ogg",
+    "path": "game/audio/bgm/bgm_es_emotional_strings.ogg",
+    "category": "BGM",
+    "chapter": "Ch09/Ch10",
+    "description": "温柔绵长的现代古典弦乐（深夜情感流动）",
+    "epidemic_title": "Vogue No. 1 — Trevor Kowalski",
+    "epidemic_id": "c07aaf95-bb04-4d74-b3d1-612423ba9e1d",
+    "size_bytes": 4442062
+  },
+  {
+    "filename": "bgm_es_confrontation.ogg",
+    "path": "game/audio/bgm/bgm_es_confrontation.ogg",
+    "category": "BGM",
+    "chapter": "Ch04/Ch10",
+    "description": "暗流涌动的低音悬疑张力（质问与秘密揭示）",
+    "epidemic_title": "Luxx — Out To The World",
+    "epidemic_id": "0005db4e-ce08-463f-b43c-b32539837dc5",
+    "size_bytes": 5204998
+  },
+  {
+    "filename": "bgm_es_dawn_bridge.ogg",
+    "path": "game/audio/bgm/bgm_es_dawn_bridge.ogg",
+    "category": "BGM",
+    "chapter": "Ch11",
+    "description": "破晓希望感钢琴与管弦铺陈（终章黎明前奏）",
+    "epidemic_title": "The Bridge — Gavin Luke",
+    "epidemic_id": "eab19377-f504-4ba0-af11-c1c07ac31ed4",
+    "size_bytes": 5741012
+  },
+  {
+    "filename": "bgm_megumi_under_the_umbrella.ogg",
+    "path": "game/audio/bgm/bgm_megumi_under_the_umbrella.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Under the Umbrella Piano（劉 恵 / YUKARINOTI）- 暗い/感動/リラックス/哀愁/泣ける雨のピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=Y_gCzpLLbb0)",
+    "size_bytes": 4449868,
+    "duration": 189.3065
+  },
+  {
+    "filename": "bgm_megumi_end_of_journey.ogg",
+    "path": "game/audio/bgm/bgm_megumi_end_of_journey.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "End of Journey Piano（劉 恵 / YUKARINOTI）- お別れを言う前に…優しくて切ない夏のピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=ZElkVVqZzXI)",
+    "size_bytes": 4209720,
+    "duration": 174.2065
+  },
+  {
+    "filename": "bgm_megumi_sadness_piano_4.ogg",
+    "path": "game/audio/bgm/bgm_megumi_sadness_piano_4.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Sadness Piano 4（劉 恵 / YUKARINOTI）- 独りで歩くような暗い雨の中のピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=-Ko3tBA1HH0)",
+    "size_bytes": 3981184,
+    "duration": 169.4065
+  },
+  {
+    "filename": "bgm_megumi_lost_piano.ogg",
+    "path": "game/audio/bgm/bgm_megumi_lost_piano.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Lost Piano（劉 恵 / YUKARINOTI）- 永遠にそっと眠る記憶のピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=yJQUp2pI-jU)",
+    "size_bytes": 4657539,
+    "duration": 189.3065
+  },
+  {
+    "filename": "bgm_megumi_darkness_piano_2.ogg",
+    "path": "game/audio/bgm/bgm_megumi_darkness_piano_2.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Darkness Piano 2（劉 恵 / YUKARINOTI）- 闇落ちしそうな暗い重いミステリーピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=tXEiWU57y7s)",
+    "size_bytes": 3491633,
+    "duration": 147.3065
+  },
+  {
+    "filename": "bgm_megumi_everyday_piano.ogg",
+    "path": "game/audio/bgm/bgm_megumi_everyday_piano.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Everyday Piano（劉 恵 / YUKARINOTI）- 夢の中のような穏やかで静かな日常ピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=qg1eMJYCDcU)",
+    "size_bytes": 4652530,
+    "duration": 190.1065
+  },
+  {
+    "filename": "bgm_megumi_letter_piano.ogg",
+    "path": "game/audio/bgm/bgm_megumi_letter_piano.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Letter Piano（劉 恵 / YUKARINOTI）- 手紙に綴られた想いに温かくて泣けるピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=hkGbFiPOFSI)",
+    "size_bytes": 4850109,
+    "duration": 203.3065
+  },
+  {
+    "filename": "bgm_megumi_sunny_spot_piano.ogg",
+    "path": "game/audio/bgm/bgm_megumi_sunny_spot_piano.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Sunny Spot Piano（劉 恵 / YUKARINOTI）- 光が抱きしめて優しく包み込むピアノ",
+    "source": "YouTube (https://www.youtube.com/watch?v=p4gLGZ7XHK0)",
+    "size_bytes": 4156834,
+    "duration": 169.3065
+  },
+  {
+    "filename": "bgm_megumi_duet_music_box.ogg",
+    "path": "game/audio/bgm/bgm_megumi_duet_music_box.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Duet Music Box（劉 恵 / YUKARINOTI）- 優しくて寂しいデュエットオルゴール",
+    "source": "YouTube (https://www.youtube.com/watch?v=JADSwFb4BTs)",
+    "size_bytes": 3548142,
+    "duration": 132.4065
+  },
+  {
+    "filename": "bgm_megumi_sadness_music_box.ogg",
+    "path": "game/audio/bgm/bgm_megumi_sadness_music_box.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Sadness Music Box（劉 恵 / YUKARINOTI）- 暗くて物悲しい孤独のオルゴール",
+    "source": "YouTube (https://www.youtube.com/watch?v=NPxJT0bJ508)",
+    "size_bytes": 3871988,
+    "duration": 145.0065
+  },
+  {
+    "filename": "bgm_megumi_nostalgic_music_box_3.ogg",
+    "path": "game/audio/bgm/bgm_megumi_nostalgic_music_box_3.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Nostalgic Music Box 3（劉 恵 / YUKARINOTI）- 眠れない夜に優しくて泣けるオルゴール",
+    "source": "YouTube (https://www.youtube.com/watch?v=KexkQx8AJVA)",
+    "size_bytes": 5754581,
+    "duration": 215.4065
+  },
+  {
+    "filename": "bgm_megumi_moist_village.ogg",
+    "path": "game/audio/bgm/bgm_megumi_moist_village.ogg",
+    "category": "BGM",
+    "chapter": "Optional/Megumi Ryu",
+    "description": "Moist Village（劉 恵 / YUKARINOTI）- 静かで落ち着く、しとしと霧の町",
+    "source": "YouTube (https://www.youtube.com/watch?v=96aoL7SBnHE)",
+    "size_bytes": 4057012,
+    "duration": 188.9065
   }
 ]

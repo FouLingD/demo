@@ -269,8 +269,8 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.5
-            ypos 1048
-            spacing 20
+            yalign 0.985
+            spacing 24
 
             textbutton _("日志"):
                 xsize 141
@@ -287,7 +287,7 @@ screen quick_menu():
                 action [Function(ui_suppress_in_sound), Function(ui_open_menu, "save")]
                 activate_sound UI_SFX_MENU_IN
                 hovered Function(ui_hover_sound)
-            textbutton _("系统"):
+            textbutton _("设置"):
                 xsize 141
                 action [Function(ui_suppress_in_sound), Function(ui_open_menu)]
                 activate_sound UI_SFX_MENU_IN
@@ -1381,12 +1381,12 @@ style nvl_window:
     xfill True
     yfill True
 
-    background "gui/nvl.png"
-    padding gui.nvl_borders.padding
+    background None
+    padding (280, 120, 280, 120)
 
 style nvl_entry:
     xfill True
-    ysize gui.nvl_height
+    ysize None
 
 style nvl_label:
     xpos gui.nvl_name_xpos
@@ -1398,21 +1398,21 @@ style nvl_label:
     textalign gui.nvl_name_xalign
 
 style nvl_dialogue:
-    xpos gui.nvl_text_xpos
-    xanchor gui.nvl_text_xalign
-    ypos gui.nvl_text_ypos
-    xsize gui.nvl_text_width
-    min_width gui.nvl_text_width
-    textalign gui.nvl_text_xalign
+    xpos 0
+    xanchor 0.0
+    ypos 0
+    xsize 1360
+    min_width 1360
+    textalign 0.0
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_thought:
-    xpos gui.nvl_thought_xpos
-    xanchor gui.nvl_thought_xalign
-    ypos gui.nvl_thought_ypos
-    xsize gui.nvl_thought_width
-    min_width gui.nvl_thought_width
-    textalign gui.nvl_thought_xalign
+    xpos 0
+    xanchor 0.0
+    ypos 0
+    xsize 1360
+    min_width 1360
+    textalign 0.0
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_button:

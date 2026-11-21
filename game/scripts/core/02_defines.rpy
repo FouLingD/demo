@@ -16,8 +16,6 @@ init python:
             if not interact:
                 return
             if event == "show":
-                ## 记下"这一句还在打字"与用的是哪个拨片：打开菜单时要把循环音掐掉，
-                ## 回到游戏时如果还在打字就接着响（直到 slow_done/end）。
                 store._blip_typing = True
                 store._blip_sound = blip_sound
                 renpy.sound.play(blip_sound, channel="blip", loop=True)
@@ -46,7 +44,6 @@ define narrator = Character(
     what_italic=False,
     what_slow_cps=35
 )
-
 
 # 主要角色（绑定立绘与头像标签 image="...", 支持自动属性联动与 SideImage）
 define tomori = Character(
@@ -138,12 +135,77 @@ define grandpa = Character("老爷爷", who_color="#000000", what_color="#000000
 define unknown = Character("？？？", who_color="#000000", what_color="#000000", callback=blip_cb_anon, what_prefix="“", what_suffix="”")
 define pink_girl = Character("粉发少女", who_color="#000000", what_color="#000000", callback=blip_cb_anon, what_prefix="“", what_suffix="”")
 
+## NVL 全屏小说模式专属角色（纯黑/纯白背景，优雅留白，不显底部对话底框）
+define vn_white = Character(
+    None,
+    kind=nvl,
+    what_color="#ffffff",
+    what_size=30,
+    what_line_spacing=18,
+    what_font=gui.text_font
+)
+
+define vn_black = Character(
+    None,
+    kind=nvl,
+    what_color="#000000",
+    what_size=30,
+    what_line_spacing=18,
+    what_font=gui.text_font
+)
+
+## 纯色背景
+image bg white = Solid("#ffffff")
+image bg black = Solid("#000000")
+
+## 雪花微粒特效：细小雪花正向飘落（白）与倒转升腾（黑）
+image snow_white = SnowBlossom("images/vfx/particle_snow_white.png", count=45, border=50, xspeed=(-15, 15), yspeed=(35, 80), fast=True)
+image snow_black_reverse = SnowBlossom("images/vfx/particle_snow_black.png", count=45, border=50, xspeed=(-15, 15), yspeed=(-80, -35), fast=True)
+
+## 非线性苏醒睁眼效果 (Eyelids Awakening)
+transform eye_upper:
+    xsize 1920 ysize 560
+    xpos 0 ypos 0 yanchor 0.0
+    # 第一次虚弱微睁 (基于 easings.net 的 easeInOutQuad 非线性平滑曲线)
+    pause 0.2
+    warp ease_in_out_quad 0.6 ypos -160
+    pause 0.2
+    warp ease_in_out_quad 0.4 ypos 0
+    pause 0.35
+    # 第二次苏醒彻底张开 (基于 easings.net 的 easeInOutCubic 曲线)
+    warp ease_in_out_cubic 1.3 ypos -560
+
+transform eye_lower:
+    xsize 1920 ysize 560
+    xpos 0 ypos 1080 yanchor 1.0
+    # 第一次虚弱微睁
+    pause 0.2
+    warp ease_in_out_quad 0.6 ypos 1240
+    pause 0.2
+    warp ease_in_out_quad 0.4 ypos 1080
+    pause 0.35
+    # 第二次苏醒彻底张开
+    warp ease_in_out_cubic 1.3 ypos 1640
+
+screen eyes_opening():
+    zorder 180
+    add Solid("#000000") at eye_upper
+    add Solid("#000000") at eye_lower
+
+
 ## 转场与变换 ##################################################################
 
 define slow_dissolve = Dissolve(2.0)
 define fast_dissolve = Dissolve(0.3)
+define cut_white_fade = Fade(0.15, 0.05, 0.35, color="#ffffff")
+define cut_black_fade = Fade(0.15, 0.05, 0.35, color="#000000")
+define slow_whiteout = Fade(0.8, 0.2, 1.5, color="#ffffff")
+define push_right = PushMove(0.50, "pushright")
+define push_left = PushMove(0.45, "pushleft")
 define flash_white = Fade(0.1, 0.0, 0.4, color="#ffffff")
 define flash_red = Fade(0.1, 0.0, 0.4, color="#e53e3e")
+define flash_warm = Fade(0.15, 0.05, 0.45, color="#fff0f5")
+define flash_cyan = Fade(0.12, 0.04, 0.40, color="#e6fffa")
 define shake_h = Move((12, 0), (-12, 0), .08, bounce=True, repeat=True, delay=.24, subpixel=True)
 
 transform center_standee:
@@ -168,55 +230,295 @@ transform slight_shake:
     linear 0.05 xoffset 4
     linear 0.05 xoffset 0
 
-## 背景定义 ####################################################################
-image bg apartment_bedroom = "images/bg/bg_apartment_bedroom.png"
-image bg apartment_entrance = "images/bg/bg_apartment_entrance.png"
-image bg arcade = "images/bg/bg_arcade.png"
-image bg bus_stop = "images/bg/bg_bus_stop.png"
-image bg cafe = "images/bg/bg_cafe.png"
-image bg classroom = "images/bg/bg_classroom.png"
-image bg convenience_store = "images/bg/bg_convenience_store.png"
-image bg gym = "images/bg/bg_gym.png"
-image bg hospital = "images/bg/bg_hospital.png"
-image bg hospital_corridor = "images/bg/bg_hospital_corridor.png"
-image bg hospital_room = "images/bg/bg_hospital_room.png"
-image bg infirmary = "images/bg/bg_infirmary.png"
-image bg library = "images/bg/bg_library.png"
-image bg music_room = "images/bg/bg_music_room.png"
-image bg night_street = "images/bg/bg_night_street.png"
-image bg park_bench = "images/bg/bg_park_bench.png"
-image bg rainy_street = "images/bg/bg_rainy_street.png"
-image bg riverside_park = "images/bg/bg_riverside_park.png"
-image bg school = "images/bg/bg_school.png"
-image bg school_lawn = "images/bg/bg_school_lawn.png"
-image bg school_rooftop = "images/bg/bg_school_rooftop.png"
-image bg seaside = "images/bg/bg_seaside.png"
-image bg staircase = "images/bg/bg_staircase.png"
-image bg station_platform = "images/bg/bg_station_platform.png"
-image bg street = "images/bg/bg_street.png"
-image bg sunset_beach = "images/bg/bg_sunset_beach.png"
+## 双人对峙与争吵动态镜头视线流转系统 (基于 easings.net 非线性缓动) ##############
+# 占位色块立绘（正式立绘替换前供测试观察镜头与站位）
+image standee_block_taki = Composite(
+    (500, 1100),
+    (0, 0), Solid("#2B3D54", xsize=500, ysize=1100),
+    (10, 10), Solid("#384E6B", xsize=480, ysize=1080),
+    (0, 480), Text("椎名立希\n(Taki)", size=44, color="#ffffff", bold=True, xalign=0.5, text_align=0.5)
+)
 
-# 新增章节场景定义（NovelAI V5 2432x1664 超清）
-image bg bus_interior = "images/bg/bg_bus_interior.png"
-image bg train_window = "images/bg/bg_train_window.png"
-image bg mall_exterior = "images/bg/bg_mall_exterior.png"
-image bg bakery_cafe = "images/bg/bg_bakery_cafe.png"
-image bg famires = "images/bg/bg_famires.png"
-image bg aquarium_tunnel = "images/bg/bg_aquarium_tunnel.png"
-image bg apartment_bedroom_dark = "images/bg/bg_apartment_bedroom_dark.png"
-image bg wedding_shop = "images/bg/bg_wedding_shop.png"
-image bg livehouse_ring = "images/bg/bg_livehouse_ring.png"
-image bg railway_overpass = "images/bg/bg_railway_overpass.png"
-image bg beach_sunset = "images/bg/bg_sunset_beach.png"
-image bg beach_night_fire = "images/bg/bg_beach_night_fire.png"
-image bg beach_rain = "images/bg/bg_beach_rain.png"
-image bg beach_reverse_rain = "images/bg/bg_beach_reverse_rain.png"
+image standee_block_soyo = Composite(
+    (500, 1100),
+    (0, 0), Solid("#7A542E", xsize=500, ysize=1100),
+    (10, 10), Solid("#9E6C3B", xsize=480, ysize=1080),
+    (0, 480), Text("长崎爽世\n(Soyo)", size=44, color="#ffffff", bold=True, xalign=0.5, text_align=0.5)
+)
+
+# 站位与镜头焦点动态流转变换
+transform standee_duo_init_left:
+    xalign 0.22
+    yalign 0.0
+    yoffset -50
+    zoom 1.0
+    alpha 1.0
+    matrixcolor BrightnessMatrix(0.0)
+
+transform standee_duo_init_right:
+    xalign 0.78
+    yalign 0.0
+    yoffset -50
+    zoom 1.0
+    alpha 1.0
+    matrixcolor BrightnessMatrix(0.0)
+
+# 视线/镜头平移至左侧角色（左说话居中高亮，右侧避让暗淡）
+transform focus_standee_left(d=0.55):
+    warp ease_in_out_cubic d xalign 0.36 zoom 1.04 alpha 1.0 matrixcolor BrightnessMatrix(0.0)
+
+transform unfocus_standee_right(d=0.55):
+    warp ease_in_out_cubic d xalign 0.86 zoom 0.94 alpha 0.55 matrixcolor BrightnessMatrix(-0.22)
+
+# 视线/镜头平移至右侧角色（右说话居中高亮，左侧避让暗淡）
+transform focus_standee_right(d=0.55):
+    warp ease_in_out_cubic d xalign 0.64 zoom 1.04 alpha 1.0 matrixcolor BrightnessMatrix(0.0)
+
+transform unfocus_standee_left(d=0.55):
+    warp ease_in_out_cubic d xalign 0.14 zoom 0.94 alpha 0.55 matrixcolor BrightnessMatrix(-0.22)
+
+# 左侧迫近质问
+transform standee_left_press(d=0.45):
+    warp ease_out_quart d xalign 0.44 zoom 1.10 alpha 1.0 matrixcolor BrightnessMatrix(0.0)
+
+# 右侧厉声喝止
+transform standee_right_burst(d=0.35):
+    warp ease_out_quart d xalign 0.66 zoom 1.08 alpha 1.0 matrixcolor BrightnessMatrix(0.0)
+
+## 第三章与单人叙事角色站位与动效 (基于 easings.net 非线性曲线，固定坐标锚点) ##############
+transform anon_center:
+    warp ease_in_out_cubic 0.6 xalign 0.50 yalign 0.0 yoffset -60 zoom 1.0
+
+transform anon_sit:
+    warp ease_in_out_cubic 0.65 xalign 0.62 yalign 0.0 yoffset 40 zoom 0.94
+
+transform anon_wander:
+    warp ease_in_out_cubic 0.65 xalign 0.38 yalign 0.0 yoffset -60 zoom 1.0
+
+transform anon_table:
+    warp ease_in_out_cubic 0.55 xalign 0.34 yalign 0.0 yoffset -60 zoom 1.02
+
+transform anon_retreat:
+    warp ease_in_out_cubic 0.50 xalign 0.58 yalign 0.0 yoffset -60 zoom 0.98
+
+transform anon_lean_in:
+    warp ease_in_out_cubic 0.50 xalign 0.44 yalign 0.0 yoffset -55 zoom 1.05
+
+transform anon_door:
+    warp ease_in_out_cubic 0.60 xalign 0.72 yalign 0.0 yoffset -60 zoom 0.96
+
+transform anon_pace_right(d=0.75):
+    warp ease_in_out_sine d xalign 0.62 yalign 0.0 yoffset -60 zoom 1.0
+
+transform anon_pace_left(d=0.80):
+    warp ease_in_out_sine d xalign 0.36 yalign 0.0 yoffset -60 zoom 1.0
+
+transform anon_pace_center(d=0.70):
+    warp ease_in_out_sine d xalign 0.50 yalign 0.0 yoffset -60 zoom 1.0
+
+transform anon_burst_in:
+    xalign 0.50 yalign 0.0 yoffset 60 zoom 0.95 alpha 0.0
+    parallel:
+        easein 0.20 alpha 1.0
+    parallel:
+        warp ease_out_back 0.55 yoffset -60 zoom 1.0
+    easein 0.10 xoffset -10
+    easeout 0.10 xoffset 10
+    easein 0.08 xoffset -5
+    easeout 0.08 xoffset 0
+
+transform stand_up_stagger:
+    easein 0.22 yoffset -30
+    easeout 0.35 yoffset -85 xoffset -10
+    easein 0.20 yoffset -50 xoffset 8
+    easeout 0.25 yoffset -60 xoffset 0
+
+
+transform standee_shake_h:
+    easein 0.04 xoffset -12
+    easeout 0.04 xoffset 12
+    easein 0.04 xoffset -8
+    easeout 0.04 xoffset 8
+    easein 0.04 xoffset -4
+    easeout 0.04 xoffset 4
+    easeout 0.04 xoffset 0
+
+transform standee_jump:
+    easein 0.14 yoffset -102
+    easeout 0.14 yoffset -56
+    easein 0.10 yoffset -76
+    easeout 0.12 yoffset -60
+
+transform standee_nod:
+    easein 0.18 yoffset -36
+    easeout 0.22 yoffset -60
+
+transform standee_tremble:
+    block:
+        linear 0.04 xoffset -3
+        linear 0.04 xoffset 3
+        linear 0.04 xoffset -2
+        linear 0.04 xoffset 2
+        linear 0.04 xoffset 0
+        repeat 4
+
+transform standee_step_in:
+    warp ease_in_out_cubic 0.55 xalign 0.50 yalign 0.0 yoffset -42 zoom 1.08
+
+transform standee_step_back:
+    warp ease_in_out_cubic 0.55 xalign 0.56 yalign 0.0 yoffset -60 zoom 0.95
+
+transform camera_heartbeat:
+    anchor (0.5, 0.5)
+    pos (0.5, 0.5)
+    easein 0.12 zoom 1.035
+    easeout 0.16 zoom 1.005
+    easein 0.10 zoom 1.022
+    easeout 0.35 zoom 1.0
+
+transform camera_gentle_sway:
+    anchor (0.5, 0.5)
+    pos (0.5, 0.5)
+    zoom 1.02
+    block:
+        ease 3.2 xoffset 8 yoffset -4
+        ease 3.2 xoffset -8 yoffset 4
+        repeat
+
+## 苏醒倾斜与高斯模糊镜头变换 (Ren'Py 8 Camera Transform，动态动作曲线系统) ############
+transform waking_camera_intro:
+    rotate_pad False
+    anchor (0.5, 0.5)
+    pos (0.5, 0.5)
+    zoom 1.05
+    rotate -3.0
+    # 阶段一：初醒时完全模糊 (50.0 彻底失焦，仅能隐约感知大片粉色色块)
+    blur 50.0
+    # 第一次虚弱微睁 (与 eyelids 0.2s pause + 0.6s warp ease_in_out_quad 同步进光)
+    pause 0.2
+    warp ease_in_out_quad 0.6 blur 28.0
+    # 闭眼短暂回缩 (0.2s pause + 0.4s warp ease_in_out_quad)
+    pause 0.2
+    warp ease_in_out_quad 0.4 blur 38.0
+    pause 0.35
+    # 第二次苏醒彻底张开：沿 ease_in_out_cubic 运动函数收敛至约 9.5 初始焦距
+    warp ease_in_out_cubic 1.3 blur 9.5
+    # 阶段二：镜头角度保持固定微倾（不晃镜头），单纯由高斯模糊在“模糊与清楚”之间往复游移（模拟刚睁眼对不上焦的视觉感受）
+    block:
+        warp ease_in_out_sine 2.2 blur 15.0
+        warp ease_in_out_sine 2.2 blur 3.0
+        warp ease_in_out_sine 2.0 blur 13.5
+        warp ease_in_out_sine 2.0 blur 2.5
+        repeat
+
+transform waking_tilt_blur:
+    rotate_pad False
+    anchor (0.5, 0.5)
+    pos (0.5, 0.5)
+    zoom 1.05
+    rotate -3.0
+    blur 10.0
+    block:
+        warp ease_in_out_sine 2.2 blur 15.0
+        warp ease_in_out_sine 2.2 blur 3.0
+        warp ease_in_out_sine 2.0 blur 13.5
+        warp ease_in_out_sine 2.0 blur 2.5
+        repeat
+
+transform waking_focus_restore(d=1.6):
+    # 阶段三：认出“千早爱音”后，模糊度与倾斜度通过非线性动作曲线彻底回归正常
+    parallel:
+        warp ease_out_cubic d blur 0.0
+    parallel:
+        warp ease_in_out_cubic d rotate 0.0 zoom 1.0
+
+
+
+
+## 实际背景资产定义（58张 2K NovelAI V5 风格图）
+image bg arcade_01_blue = "images/bg/arcade_01_blue.png"
+image bg arcade_01_orange = "images/bg/arcade_01_orange.png"
+image bg bedroom_01_blue = "images/bg/bedroom_01_blue.png"
+image bg bedroom_01_magenta = "images/bg/bedroom_01_magenta.png"
+image bg bedroom_01_orange = "images/bg/bedroom_01_orange.png"
+image bg bedroom_01_purple = "images/bg/bedroom_01_purple.png"
+image bg bedroom_01_red = "images/bg/bedroom_01_red.png"
+image bg bedroom_01_rose = "images/bg/bedroom_01_rose.png"
+image bg car_window_01_blue = "images/bg/car_window_01_blue.png"
+image bg car_window_01_orange = "images/bg/car_window_01_orange.png"
+image bg city_01_blue = "images/bg/city_01_blue.png"
+image bg city_01_orange = "images/bg/city_01_orange.png"
+image bg city_02_blue = "images/bg/city_02_blue.png"
+image bg city_02_orange = "images/bg/city_02_orange.png"
+image bg cloud_01_blue = "images/bg/cloud_01_blue.png"
+image bg cloud_01_orange = "images/bg/cloud_01_orange.png"
+image bg cloud_02_blue = "images/bg/cloud_02_blue.png"
+image bg cloud_02_orange = "images/bg/cloud_02_orange.png"
+image bg corridor_01_blue = "images/bg/corridor_01_blue.png"
+image bg corridor_01_orange = "images/bg/corridor_01_orange.png"
+image bg corridor_02_blue = "images/bg/corridor_02_blue.png"
+image bg corridor_02_orange = "images/bg/corridor_02_orange.png"
+image bg corridor_03_blue = "images/bg/corridor_03_blue.png"
+image bg corridor_03_orange = "images/bg/corridor_03_orange.png"
+image bg corridor_04_blue = "images/bg/corridor_04_blue.png"
+image bg corridor_04_orange = "images/bg/corridor_04_orange.png"
+image bg corridor_05_blue = "images/bg/corridor_05_blue.png"
+image bg corridor_05_orange = "images/bg/corridor_05_orange.png"
+image bg hospital_bed_01_blue = "images/bg/hospital_bed_01_blue.png"
+image bg hospital_bed_01_orange = "images/bg/hospital_bed_01_orange.png"
+image bg hospital_bed_02_blue = "images/bg/hospital_bed_02_blue.png"
+image bg hospital_bed_02_orange = "images/bg/hospital_bed_02_orange.png"
+image bg hospital_exterior_01_blue = "images/bg/hospital_exterior_01_blue.png"
+image bg hospital_exterior_01_orange = "images/bg/hospital_exterior_01_orange.png"
+image bg hospital_interior_01_blue = "images/bg/hospital_interior_01_blue.png"
+image bg hospital_interior_01_orange = "images/bg/hospital_interior_01_orange.png"
+image bg rehearsal_room_01_blue = "images/bg/rehearsal_room_01_blue.png"
+image bg rehearsal_room_01_orange = "images/bg/rehearsal_room_01_orange.png"
+image bg restaurant_01_blue = "images/bg/restaurant_01_blue.png"
+image bg restaurant_01_orange = "images/bg/restaurant_01_orange.png"
+image bg road_01_blue = "images/bg/road_01_blue.png"
+image bg road_01_orange = "images/bg/road_01_orange.png"
+image bg road_02_blue = "images/bg/road_02_blue.png"
+image bg road_02_orange = "images/bg/road_02_orange.png"
+image bg school_01_blue = "images/bg/school_01_blue.png"
+image bg school_01_orange = "images/bg/school_01_orange.png"
+image bg sea_01_blue = "images/bg/sea_01_blue.png"
+image bg sea_01_orange = "images/bg/sea_01_orange.png"
+image bg sea_02_blue = "images/bg/sea_02_blue.png"
+image bg sea_02_orange = "images/bg/sea_02_orange.png"
+image bg sea_03_blue = "images/bg/sea_03_blue.png"
+image bg sea_03_orange = "images/bg/sea_03_orange.png"
+image bg sea_04_blue = "images/bg/sea_04_blue.png"
+image bg sea_04_orange = "images/bg/sea_04_orange.png"
+image bg station_01_blue = "images/bg/station_01_blue.png"
+image bg station_01_orange = "images/bg/station_01_orange.png"
+image bg station_02_blue = "images/bg/station_02_blue.png"
+image bg station_02_orange = "images/bg/station_02_orange.png"
+
+## 兼容别名映射
 image bg whiteout = Solid("#ffffff")
+image bg hospital_room = "images/bg/hospital_bed_01_blue.png"
+image bg hospital_corridor = "images/bg/corridor_01_blue.png"
+image bg hospital = "images/bg/hospital_interior_01_blue.png"
+image bg music_room = "images/bg/rehearsal_room_01_blue.png"
+image bg school = "images/bg/school_01_blue.png"
+image bg school_rooftop = "images/bg/cloud_01_blue.png"
+image bg street = "images/bg/road_01_blue.png"
+image bg night_street = "images/bg/road_02_blue.png"
+image bg bus_stop = "images/bg/road_01_blue.png"
+image bg cafe = "images/bg/restaurant_01_blue.png"
+image bg arcade = "images/bg/arcade_01_blue.png"
+image bg seaside = "images/bg/sea_01_blue.png"
+image bg sunset_beach = "images/bg/sea_01_orange.png"
+image bg station_platform = "images/bg/station_01_blue.png"
+image bg apartment_bedroom = "images/bg/bedroom_01_blue.png"
+image bg apartment_bedroom_dark = "images/bg/bedroom_01_purple.png"
+image bg apartment_entrance = "images/bg/corridor_01_blue.png"
+image bg aquarium_tunnel = "images/bg/sea_02_blue.png"
+image bg bus_interior = "images/bg/car_window_01_blue.png"
+image bg train_window = "images/bg/car_window_01_blue.png"
 
 ## 角色立绘定义 ################################################################
-image whale = "images/characters/whale.png"
-image elephant = "images/characters/elephant.png"
-
 image anon casual blush = "images/characters/anon/anon_casual_blush.png"
 image anon casual confident = "images/characters/anon/anon_casual_grin.png"
 image anon casual excited = "images/characters/anon/anon_casual_excited.png"
@@ -455,6 +757,10 @@ image anon windbreaker blush = "images/characters/anon/anon_casual_blush.png"
 image anon windbreaker gentle = "images/characters/anon/anon_casual_smile.png"
 image anon windbreaker serious = "images/characters/anon/anon_casual_smirk.png"
 image anon windbreaker surprised = "images/characters/anon/anon_hospital_flustered.png"
+image anon windbreaker confused = "images/characters/anon/anon_hospital_flustered.png"
+image anon windbreaker pensive = "images/characters/anon/anon_casual_blush.png"
+image anon windbreaker pout = "images/characters/anon/anon_casual_pout.png"
+image anon windbreaker normal = "images/characters/anon/anon_casual_smile.png"
 
 # 千早爱音 - 居家服 (loungewear)
 image anon loungewear smile = "images/characters/anon/anon_casual_grin.png"
@@ -665,4 +971,58 @@ image cg closeup tomori wedding tears = "images/cg/cg_closeup_reverse_rain.png"
 
 
 
+
+
+
+## ==============================================================================
+## 《二手时间》标准视觉规范声明（依据规范文件.md 与 图片.rtf）
+## ==============================================================================
+
+## 1. 千早爱音（Anon）病房立绘差分
+image anon hosp 01 smug = "images/characters/anon/anon_hosp_01_smug.png"
+image anon hosp 02 boast = "images/characters/anon/anon_hosp_02_boast.png"
+image anon hosp 03 curious_1 = "images/characters/anon/anon_hosp_03_curious_1.png"
+image anon hosp 03 curious_2 = "images/characters/anon/anon_hosp_03_curious_2.png"
+image anon hosp 03 curious_3 = "images/characters/anon/anon_hosp_03_curious_3.png"
+image anon hosp 04 shy_1 = "images/characters/anon/anon_hosp_04_shy_1.png"
+image anon hosp 04 shy_2 = "images/characters/anon/anon_hosp_04_shy_2.png"
+image anon hosp 05 annoyed_1 = "images/characters/anon/anon_hosp_05_annoyed_1.png"
+image anon hosp 05 annoyed_2 = "images/characters/anon/anon_hosp_05_annoyed_2.png"
+image anon hosp 06 pain = "images/characters/anon/anon_hosp_06_pain.png"
+image anon hosp 07 normal_1 = "images/characters/anon/anon_hosp_07_normal_1.png"
+image anon hosp 07 normal_2 = "images/characters/anon/anon_hosp_07_normal_2.png"
+image anon hosp 07 normal_3 = "images/characters/anon/anon_hosp_07_normal_3.png"
+image anon hosp 08 gentle = "images/characters/anon/anon_hosp_08_gentle.png"
+image anon hosp 09 confess = "images/characters/anon/anon_hosp_09_confess.png"
+image anon hosp 10 tears = "images/characters/anon/anon_hosp_10_tears.png"
+
+## 2. 椎名立希（Taki）立绘差分
+image taki 01 glare = "images/characters/taki/taki_01_glare.png"
+image taki 02 normal_1 = "images/characters/taki/taki_02_normal_1.png"
+image taki 02 normal_2 = "images/characters/taki/taki_02_normal_2.png"
+image taki 03 sad = "images/characters/taki/taki_03_sad.png"
+
+## 3. 长崎素世（Soyo）立绘差分
+image soyo 01 smile = "images/characters/soyo/soyo_01_smile.png"
+image soyo 01 normal = "images/characters/soyo/soyo_01_normal.png"
+
+## 4. 高松灯（Tomori）主视角 Side Image 头像差分（18 组情绪）
+image side tomori ah = "images/characters/side/Side ah.png"
+image side tomori an2 = "images/characters/side/Side an2.png"
+image side tomori babble = "images/characters/side/Side babble.png"
+image side tomori bitter = "images/characters/side/Side bitter.png"
+image side tomori calm = "images/characters/side/Side calm.png"
+image side tomori concern = "images/characters/side/Side concern.png"
+image side tomori ehh = "images/characters/side/Side ehh.png"
+image side tomori happy = "images/characters/side/Side happy.png"
+image side tomori kya = "images/characters/side/Side kya.png"
+image side tomori neutral = "images/characters/side/Side neutral.png"
+image side tomori pout = "images/characters/side/Side pout.png"
+image side tomori sad = "images/characters/side/Side sad.png"
+image side tomori sadaway = "images/characters/side/Side sadaway.png"
+image side tomori smile = "images/characters/side/Side smile.png"
+image side tomori soft = "images/characters/side/Side soft.png"
+image side tomori uff = "images/characters/side/Side uff.png"
+image side tomori yay = "images/characters/side/Side yay.png"
+image side tomori wtf = "images/characters/side/Side wtf.png"
 
