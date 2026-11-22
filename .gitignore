@@ -1,24 +1,39 @@
 # OS files
 .DS_Store
 Thumbs.db
-**/.DS_Store
+Desktop.ini
 
-# Ren'Py Cache & Saves
+# Ren'Py generated files and local saves
+*.rpyc
+*.rpymc
+*.rpyb
 cache/
 saves/
-**/cache/
-**/saves/
 
-# Logs
+# Python generated files and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and temporary editor locks
 log.txt
 traceback.txt
 errors.txt
-**/log.txt
-**/traceback.txt
-**/errors.txt
+.dsh-ops-update-*.lock
+*.swp
+*.swo
+*~
 
-# Large video files (>100MB GitHub limit)
+# Local asset experiments and UI captures
+/_sfx_tmp/
+/_ui*.png
+/_ui_new/
+/_probe*.txt
+
+# Large video formats excluded by the existing project policy
 *.mp4
 *.mov
 *.mkv
 *.avi
+

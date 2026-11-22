@@ -173,6 +173,13 @@ init python:
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
 
+    # 开发文档、历史资料和素材工具不进入发行包。
+    build.classify('docs/**', None)
+    build.classify('archive/**', None)
+    build.classify('tools/**', None)
+    build.classify('_sfx_tmp/**', None)
+    build.classify('README.md', None)
+
     ## To archive files, classify them as 'archive'.
 
     # build.classify('game/**.png', 'archive')
@@ -199,3 +206,4 @@ define build.itch_project = "renpytom/the-question"
 
 # Enable the console.
 define config.console = True
+
